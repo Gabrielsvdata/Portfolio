@@ -1,53 +1,33 @@
-# Gabriel Silvano Vieira - Portfólio
+# 🌿 Gabriel Silvano Vieira - Portfólio
 
-Um portfólio moderno e responsivo desenvolvido com React e Tailwind CSS.
+Portfólio pessoal com design Earth Tones / Quiet Luxury.
+
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![Tailwind](https://img.shields.io/badge/Tailwind-3-06B6D4?logo=tailwindcss)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)
 
 ## 🚀 Tecnologias
 
-- **React** - Biblioteca JavaScript para construção de interfaces
-- **Vite** - Build tool rápido para desenvolvimento
-- **Tailwind CSS** - Framework CSS utilitário
-- **Lucide React** - Ícones modernos
+- React + Vite
+- Tailwind CSS
+- Lucide React (ícones)
 
-## 📋 Seções
-
-- **Hero** - Apresentação pessoal com links sociais
-- **Projetos** - Portfólio de projetos com links para GitHub e deploy
-- **Habilidades** - Tecnologias e ferramentas dominadas
-- **Contato** - Formulário de contato e informações
-
-## 🛠️ Como Executar
-
-### Pré-requisitos
-
-- Node.js 18+ instalado
-- npm ou yarn
-
-### Instalação
+## 📦 Instalação
 
 ```bash
-# Instalar dependências
 npm install
-
-# Iniciar servidor de desenvolvimento
 npm run dev
-
-# Criar build de produção
-npm run build
-
-# Visualizar build de produção
-npm run preview
 ```
 
-## 📁 Estrutura do Projeto
+## 🔗 Links
 
-```
-portfolio/
-├── public/
-│   └── vite.svg
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
+- **GitHub:** [github.com/Gabrielsvdata](https://github.com/Gabrielsvdata)
+- **LinkedIn:** [linkedin.com/in/gabriel-silvano-vieira](https://www.linkedin.com/in/gabriel-silvano-vieira/)
+- **Email:** gabrielsilvanovieira7@gmail.com
+
+## 📄 Licença
+
+MIT © Gabriel Silvano Vieira
 │   │   ├── Hero.jsx
 │   │   ├── Projects.jsx
 │   │   ├── Skills.jsx
