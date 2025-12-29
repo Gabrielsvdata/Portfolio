@@ -107,7 +107,7 @@ const Projects = () => {
             Meus <span className="gradient-text">Projetos</span>
           </h2>
           <p className="text-sand-400 max-w-2xl mx-auto text-sm sm:text-base">
-            Confira alguns dos projetos que desenvolvi, demonstrando minhas habilidades em desenvolvimento Full Stack.
+            Confira alguns dos projetos que desenvolvi, demonstrando minhas habilidades em desenvolvimento Backend.
           </p>
         </div>
 
