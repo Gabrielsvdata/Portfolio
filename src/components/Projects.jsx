@@ -1,43 +1,12 @@
-import { ExternalLink, Github, Code2 } from 'lucide-react'
-
-const projects = [
-  {
-    id: 1,
-    title: 'SISPAR Frontend',
-    description: 'Sistema de Emissão de Boletos e Parcelamentos. Interface moderna e intuitiva desenvolvida com React, oferecendo autenticação segura e gestão completa de boletos.',
-    image: '/images/sispar.png',
-    technologies: ['React', 'JavaScript', 'CSS', 'Vite'],
-    github: 'https://github.com/Gabrielsvdata/Sispar-Frontend',
-    deploy: 'https://projeto-sispar.vercel.app/',
-    featured: true,
-  },
-  {
-    id: 2,
-    title: 'SISPAR Backend',
-    description: 'API robusta e escalável para o sistema SISPAR. Backend completo com autenticação, gestão de usuários e emissão de boletos.',
-    image: '/images/sispar.png',
-    technologies: ['Python', 'API REST', 'Database', 'Backend'],
-    github: 'https://github.com/Gabrielsvdata/Sispar-Backend',
-    deploy: 'https://projeto-sispar.vercel.app/',
-    featured: true,
-  },
-  {
-    id: 3,
-    title: 'Projeto Vermelho',
-    description: 'Projeto web com design criativo e estilização avançada. Desenvolvido com HTML semântico e SASS para uma estrutura organizada e estilos modulares.',
-    image: '/images/vermelho.png',
-    technologies: ['HTML', 'SASS', 'CSS'],
-    github: 'https://github.com/Gabrielsvdata/Projeto_Vermelho',
-    deploy: 'https://projeto-vermelho-8gel.vercel.app/',
-    featured: true,
-  },
-]
+import { useState } from 'react'
+import { ExternalLink, Github, Code2, ChevronLeft, ChevronRight } from 'lucide-react'
+import { projects } from '../data/projectsData'
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="group relative bg-walnut-800/50 rounded-2xl overflow-hidden glass glow-on-hover transition-all duration-500 hover:-translate-y-2">
+    <div className="group relative bg-walnut-800/50 rounded-2xl overflow-hidden glass glow-on-hover transition-all duration-500 hover:-translate-y-2 flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]">
       {/* Project Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-40 sm:h-48 overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
@@ -47,15 +16,15 @@ const ProjectCard = ({ project }) => {
         
         {/* Featured badge */}
         {project.featured && (
-          <div className="absolute top-4 right-4 px-3 py-1 bg-primary-500/90 text-sand-100 text-xs font-semibold rounded-full">
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 sm:px-3 py-1 bg-primary-500/90 text-sand-100 text-xs font-semibold rounded-full">
             Destaque
           </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-sand-100 mb-2 group-hover:text-primary-400 transition-colors">
+      <div className="p-4 sm:p-6">
+        <h3 className="text-lg sm:text-xl font-bold text-sand-100 mb-2 group-hover:text-primary-400 transition-colors">
           {project.title}
         </h3>
         <p className="text-sand-400 text-sm mb-4 line-clamp-3">
@@ -63,11 +32,11 @@ const ProjectCard = ({ project }) => {
         </p>
 
         {/* Technologies */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
           {project.technologies.map((tech, index) => (
             <span
               key={index}
-              className="px-3 py-1 bg-primary-500/10 text-primary-400 text-xs font-medium rounded-full border border-primary-500/20"
+              className="px-2 sm:px-3 py-1 bg-primary-500/10 text-primary-400 text-xs font-medium rounded-full border border-primary-500/20"
             >
               {tech}
             </span>
@@ -101,8 +70,24 @@ const ProjectCard = ({ project }) => {
 }
 
 const Projects = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const itemsPerPage = 3
+  const totalPages = Math.ceil(projects.length / itemsPerPage)
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalPages)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages)
+  }
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index)
+  }
+
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 relative">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-0 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"></div>
@@ -111,35 +96,97 @@ const Projects = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Code2 className="text-primary-400" size={28} />
             <span className="text-primary-400 font-semibold uppercase tracking-wider text-sm">
               Portfólio
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-sand-100 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-sand-100 mb-4">
             Meus <span className="gradient-text">Projetos</span>
           </h2>
-          <p className="text-sand-400 max-w-2xl mx-auto">
+          <p className="text-sand-400 max-w-2xl mx-auto text-sm sm:text-base">
             Confira alguns dos projetos que desenvolvi, demonstrando minhas habilidades em desenvolvimento Full Stack.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Buttons - Desktop */}
+          {projects.length > itemsPerPage && (
+            <>
+              <button
+                onClick={prevSlide}
+                className="hidden lg:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 glass rounded-full items-center justify-center text-sand-400 hover:text-sand-100 hover:bg-primary-500/20 transition-all duration-300"
+                aria-label="Projeto anterior"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 glass rounded-full items-center justify-center text-sand-400 hover:text-sand-100 hover:bg-primary-500/20 transition-all duration-300"
+                aria-label="Próximo projeto"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </>
+          )}
+
+          {/* Desktop Carousel - hidden on mobile */}
+          <div className="hidden lg:block overflow-hidden">
+            <div 
+              className="flex gap-8 transition-transform duration-500 ease-in-out"
+              style={{ 
+                transform: `translateX(-${currentIndex * 100}%)`,
+              }}
+            >
+              <div className="flex gap-8 min-w-full">
+                {projects
+                  .slice(currentIndex * itemsPerPage, currentIndex * itemsPerPage + itemsPerPage)
+                  .map((project) => (
+                    <ProjectCard key={project.id} project={project} />
+                  ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile: Show all projects stacked */}
+          <div className="lg:hidden flex flex-col gap-4 sm:gap-6">
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+
+          {/* Desktop Dots Navigation */}
+          <div className="hidden lg:block">
+            {/* Dots Navigation */}
+            {totalPages > 1 && (
+              <div className="flex justify-center gap-2 mt-8">
+                {Array.from({ length: totalPages }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      index === currentIndex 
+                        ? 'bg-primary-500 w-8' 
+                        : 'bg-walnut-600 hover:bg-walnut-500'
+                    }`}
+                    aria-label={`Ir para página ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* GitHub CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-10 lg:mt-12">
           <a
             href="https://github.com/Gabrielsvdata"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-walnut-600 text-sand-300 font-semibold rounded-full hover:border-primary-500 hover:text-primary-400 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 border-2 border-walnut-600 text-sand-300 font-semibold rounded-full hover:border-primary-500 hover:text-primary-400 transition-all duration-300 text-sm sm:text-base"
           >
             <Github size={20} />
             <span>Ver mais no GitHub</span>

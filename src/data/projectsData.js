@@ -1,0 +1,32 @@
+export const projects = [
+  {
+    id: 1,
+    title: 'SISPAR Frontend',
+    description: 'Sistema de Emissão de Boletos e Parcelamentos. Interface moderna e intuitiva desenvolvida com React, oferecendo autenticação segura e gestão completa de boletos.',
+    image: '/images/sispar.png',
+    technologies: ['React', 'JavaScript', 'CSS', 'Vite'],
+    github: 'https://github.com/Gabrielsvdata/Sispar-Frontend',
+    deploy: 'https://projeto-sispar.vercel.app/',
+    featured: true,
+  },
+  {
+    id: 2,
+    title: 'SISPAR Backend',
+    description: 'API robusta e escalável para o sistema SISPAR. Backend completo com autenticação, gestão de usuários e emissão de boletos.',
+    image: '/images/sispar.png',
+    technologies: ['Python', 'API REST', 'Database', 'Backend'],
+    github: 'https://github.com/Gabrielsvdata/Sispar-Backend',
+    deploy: 'https://projeto-sispar.vercel.app/',
+    featured: true,
+  },
+  {
+    id: 3,
+    title: 'Projeto Vermelho',
+    description: 'Projeto web com design criativo e estilização avançada. Desenvolvido com HTML semântico e SASS para uma estrutura organizada e estilos modulares.',
+    image: '/images/vermelho.png',
+    technologies: ['HTML', 'SASS', 'CSS'],
+    github: 'https://github.com/Gabrielsvdata/Projeto_Vermelho',
+    deploy: 'https://projeto-vermelho-8gel.vercel.app/',
+    featured: true,
+  },
+]

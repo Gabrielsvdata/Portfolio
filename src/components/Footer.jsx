@@ -17,7 +17,7 @@ const Footer = () => {
               <span className="text-2xl font-bold gradient-text">GSV</span>
             </a>
             <p className="text-sand-400 mt-2 text-sm">
-              Estudante de Desenvolvimento de Software em constante evolução.
+              Estudante de Desenvolvimento Backend em constante evolução.
             </p>
           </div>
 

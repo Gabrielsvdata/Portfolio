@@ -1,5 +1,14 @@
 import { useState } from 'react'
-import { Mail, MapPin, Phone, Send, Github, Linkedin, MessageCircle } from 'lucide-react'
+import { Mail, MapPin, Send, Github, Linkedin, MessageCircle } from 'lucide-react'
+import { contactInfo as contactData, socialLinks } from '../data/contactData'
+
+// Mapeamento de ícones
+const iconMap = {
+  Mail,
+  Linkedin,
+  MapPin,
+  Github,
+}
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +16,12 @@ const Contact = () => {
     email: '',
     message: '',
   })
+
+  // Adiciona os componentes de ícone aos dados
+  const contactInfo = contactData.map(info => ({
+    ...info,
+    icon: iconMap[info.icon] || Mail,
+  }))
 
   const handleChange = (e) => {
     setFormData({
@@ -17,41 +32,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Aqui você pode adicionar a lógica para enviar o formulário
-    // Por exemplo, integrar com EmailJS, Formspree, ou sua própria API
-    const mailtoLink = `mailto:gabrielsilvanovieira7@gmail.com?subject=Contato do Portfólio - ${formData.name}&body=${formData.message}%0A%0AEmail: ${formData.email}`
+    const mailtoLink = `mailto:${socialLinks.email}?subject=Contato do Portfólio - ${formData.name}&body=${formData.message}%0A%0AEmail: ${formData.email}`
     window.location.href = mailtoLink
   }
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'gabrielsilvanovieira7@gmail.com',
-      href: 'mailto:gabrielsilvanovieira7@gmail.com',
-    },
-    {
-      icon: Linkedin,
-      label: 'LinkedIn',
-      value: 'gabriel-silvano-vieira',
-      href: 'https://www.linkedin.com/in/gabriel-silvano-vieira/',
-    },
-    {
-      icon: MapPin,
-      label: 'Localização',
-      value: 'São Vicente, SP, Brasil',
-      href: null,
-    },
-    {
-      icon: Github,
-      label: 'GitHub',
-      value: 'Gabrielsvdata',
-      href: 'https://github.com/Gabrielsvdata',
-    },
-  ]
-
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 relative">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"></div>
@@ -60,24 +46,24 @@ const Contact = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <MessageCircle className="text-primary-400" size={28} />
             <span className="text-primary-400 font-semibold uppercase tracking-wider text-sm">
               Contato
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-sand-100 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-sand-100 mb-4">
             Vamos <span className="gradient-text">Conversar</span>?
           </h2>
-          <p className="text-sand-400 max-w-2xl mx-auto">
+          <p className="text-sand-400 max-w-2xl mx-auto text-sm sm:text-base">
             Estou disponível para novos projetos e oportunidades. Entre em contato!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-sand-100 mb-6">
                 Informações de Contato
@@ -89,7 +75,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Cards */}
-            <div className="space-y-4">
+            <div className="space-y-6">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon
                 const content = (

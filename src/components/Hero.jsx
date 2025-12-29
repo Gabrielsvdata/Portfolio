@@ -32,7 +32,7 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-xl sm:text-2xl text-sand-400 mb-8 max-w-2xl mx-auto">
-            Estudante de <span className="text-primary-400 font-semibold">Desenvolvimento de Software</span> em constante evolução, transformando conhecimento em código e ideias em projetos reais.
+            Estudante de <span className="text-primary-400 font-semibold">Desenvolvedor Backend</span> em constante evolução, transformando conhecimento em código e ideias em projetos reais.
           </p>
 
           {/* CTA Buttons */}
