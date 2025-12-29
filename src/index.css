@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #1a1210 0%, #2d1f1a 50%, #1a1210 100%);
+  min-height: 100vh;
+}
+
+/* Custom scrollbar - Earth Tones */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2d1f1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a67c52;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5e3c;
+}
+
+/* Gradient text - Warm tones */
+.gradient-text {
+  background: linear-gradient(135deg, #c4a882 0%, #a67c52 50%, #8b5e3c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism effect - Warm version */
+.glass {
+  background: rgba(166, 124, 82, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(166, 124, 82, 0.15);
+}
+
+/* Hover glow effect - Earth tones */
+.glow-on-hover:hover {
+  box-shadow: 0 0 30px rgba(166, 124, 82, 0.35);
+}
