@@ -1,0 +1,121 @@
+.expertise {
+  padding: 5rem 2rem;
+  background: var(--bg-dark);
+  position: relative;
+
+  .expertise-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .expertise-header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .header-line {
+      width: 80px;
+      height: 4px;
+      background: var(--gradient-primary);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .expertise-card {
+    background: rgba(255, 107, 53, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    &:hover {
+      border-color: var(--accent-secondary);
+      background: rgba(255, 107, 53, 0.08);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(255, 107, 53, 0.15);
+
+      &::before {
+        left: 100%;
+      }
+
+      .expertise-icon {
+        transform: scale(1.2) rotateY(360deg);
+      }
+    }
+
+    .expertise-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: center;
+
+      .skill-tag {
+        background: rgba(139, 90, 60, 0.15);
+        color: var(--accent-primary);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid rgba(139, 90, 60, 0.3);
+        transition: all 0.3s ease;
+
+        .expertise-card:hover & {
+          background: rgba(255, 107, 53, 0.2);
+          color: var(--accent-secondary);
+          border-color: var(--accent-secondary);
+        }
+      }
+    }
+  }
+}

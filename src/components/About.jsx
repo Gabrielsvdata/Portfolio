@@ -1,75 +1,74 @@
-import { motion } from 'framer-motion'
-import Card from './common/Card'
-import { metricsData } from '../data/portfolioData'
+import React from 'react'
+import './About.scss'
 
-export default function About() {
+function About() {
   return (
-    <section id="about" className="py-20 px-4 md:px-8 bg-gray-dark">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Sobre <span className="gradient-text">Mim</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-orange-tech to-primary-purple mx-auto" />
-        </motion.div>
+    <section className="about">
+      <div className="about-container">
+        <div className="about-header">
+          <h2>Sobre Mim</h2>
+          <div className="header-line"></div>
+        </div>
 
-        {/* About Content */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <p className="text-lg text-gray-text leading-relaxed">
-              Sou desenvolvedor backend. Trabalho com Node.js, Python e IA. Prefiro código limpo que resolve o problema sem complicar as coisas.
+        <div className="about-content">
+          <div className="about-text">
+            <p>
+              Sou um desenvolvedor backend apaixonado por criar soluções robustas e escaláveis. Com 1+ ano de experiência em Python e Node.js, utilizo as melhores práticas para desenvolver APIs eficientes e confiáveis.
             </p>
-            <p className="text-lg text-gray-text leading-relaxed">
-              Trabalhei em 5 projetos em produção (SISPAR, KID IA, Doação Solidária, Gestão Cuidadora e Bot Especialista), passei por Stone e Carrefour, e fiz alguns trabalhos freelancer. Aprendi bastante sobre o que funciona na prática.
+            
+            <p>
+              Meu foco é em arquitetura de sistemas RESTful, otimização de banco de dados e implementação de funcionalidades end-to-end. Tenho expertise em MySQL, SQLite3, e ferramentas modernas de desenvolvimento.
             </p>
-            <p className="text-lg text-gray-text leading-relaxed">
-              Fico atento a novas tecnologias, principalmente IA. Mas só uso quando faz sentido pro projeto. Prefiro simplicidade a hype.
-            </p>
-          </motion.div>
 
-          {/* Metrics Cards */}
-          <motion.div 
-            className="grid grid-cols-2 gap-4"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {metricsData.map((metric, index) => (
-              <Card 
-                key={index} 
-                delay={index * 0.1}
-                className="text-center"
-              >
-                <motion.h3 
-                  className="text-3xl md:text-4xl font-bold text-orange-tech mb-2"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  {metric.value}
-                </motion.h3>
-                <p className="text-sm text-gray-secondary">{metric.label}</p>
-              </Card>
-            ))}
-          </motion.div>
+            <div className="stats">
+              <div className="stat-item">
+                <h3>5+</h3>
+                <p>Projetos Desenvolvidos</p>
+              </div>
+              <div className="stat-item">
+                <h3>1+</h3>
+                <p>Anos de Experiência</p>
+              </div>
+              <div className="stat-item">
+                <h3>5K+</h3>
+                <p>Linhas de Código</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="about-skills">
+            <h3>Stack Tecnológico</h3>
+            <div className="skills-grid">
+              <div className="skill-badge">
+                <span className="skill-icon">🐍</span>
+                <span>Python</span>
+              </div>
+              <div className="skill-badge">
+                <span className="skill-icon">📊</span>
+                <span>Machine Learning</span>
+              </div>
+              <div className="skill-badge">
+                <span className="skill-icon">🗄️</span>
+                <span>SQL/PostgreSQL</span>
+              </div>
+              <div className="skill-badge">
+                <span className="skill-icon">⚡</span>
+                <span>FastAPI/Django</span>
+              </div>
+              <div className="skill-badge">
+                <span className="skill-icon">🔄</span>
+                <span>Automação RPA</span>
+              </div>
+              <div className="skill-badge">
+                <span className="skill-icon">📈</span>
+                <span>Análise de Dados</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   )
 }
+
+export default About

@@ -1,128 +1,49 @@
-import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react'
+import React from 'react'
+import './Footer.scss'
 
-export default function Footer() {
+function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const socialLinks = [
-    { icon: Github, url: '#', label: 'GitHub' },
-    { icon: Linkedin, url: '#', label: 'LinkedIn' },
-    { icon: Mail, url: 'mailto:gabriel@example.com', label: 'Email' },
-    { icon: Twitter, url: '#', label: 'Twitter' },
-  ]
-
-  const quickLinks = [
-    { label: 'Home', href: '#hero' },
-    { label: 'Sobre', href: '#about' },
-    { label: 'Projetos', href: '#projects' },
-    { label: 'Contato', href: '#contact' },
-  ]
-
   return (
-    <footer className="bg-bg-dark border-t border-gray-700 py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Footer Content */}
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold gradient-text mb-4">Gabriel Silvano</h3>
-            <p className="text-gray-text">
-              Desenvolvedor Backend especializado em criar soluções escaláveis com Node.js e IA.
-            </p>
-          </motion.div>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3>Gabriel Silvano</h3>
+            <p>Desenvolvedor Backend & Especialista em IA</p>
+          </div>
 
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-lg font-bold text-white mb-4">Links Rápidos</h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-gray-text hover:text-orange-tech transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+          <div className="footer-section">
+            <h4>Navegação</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">Sobre</a></li>
+              <li><a href="#expertise">Expertise</a></li>
+              <li><a href="#projects">Projetos</a></li>
+              <li><a href="#contact">Contato</a></li>
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-lg font-bold text-white mb-4">Redes Sociais</h4>
-            <div className="flex gap-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon
-                return (
-                  <motion.a
-                    key={social.label}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 flex items-center justify-center bg-gray-dark rounded-lg text-gray-text hover:text-orange-tech hover:bg-orange-tech/10 transition-colors"
-                    aria-label={social.label}
-                  >
-                    <Icon size={20} />
-                  </motion.a>
-                )
-              })}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-gray-700 py-8">
-          {/* Footer Bottom */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-secondary text-sm"
-          >
-            <p>© {currentYear} Gabriel Silvano. Todos os direitos reservados.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-orange-tech transition-colors">
-                Política de Privacidade
+          <div className="footer-section">
+            <h4>Redes Sociais</h4>
+            <div className="social-icons">
+              <a href="https://github.com/gabrielsvdata" target="_blank" rel="noopener noreferrer" title="GitHub">
+                GitHub
               </a>
-              <a href="#" className="hover:text-orange-tech transition-colors">
-                Termos de Uso
+              <a href="https://linkedin.com/in/gabriel-silvano-vieira" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                LinkedIn
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Scroll to Top Button */}
-        <motion.a
-          href="#hero"
-          whileHover={{ scale: 1.1, y: -5 }}
-          whileTap={{ scale: 0.95 }}
-          className="fixed bottom-8 right-8 w-12 h-12 bg-orange-tech text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-glow-orange cursor-pointer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          ↑
-        </motion.a>
+        <div className="footer-bottom">
+          <p>&copy; {currentYear} Gabriel Silvano. Todos os direitos reservados.</p>
+          <p>Desenvolvido com <span className="heart">❤️</span> usando React + Vite</p>
+        </div>
       </div>
     </footer>
   )
 }
+
+export default Footer

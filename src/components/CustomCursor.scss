@@ -1,0 +1,42 @@
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-secondary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: rgba(139, 90, 60, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  animation: trailFade 0.6s ease-out forwards;
+}
+
+@keyframes trailFade {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .cursor,
+  .cursor-trail {
+    display: none;
+  }
+}
