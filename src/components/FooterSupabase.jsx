@@ -4,70 +4,99 @@ import { motion } from 'framer-motion'
 export default function FooterSupabase() {
   const currentYear = new Date().getFullYear()
 
+  const LinkItem = ({ href, label, external = false }) => (
+    <motion.a
+      href={href}
+      target={external ? '_blank' : undefined}
+      rel={external ? 'noopener noreferrer' : undefined}
+      whileHover={{ x: 4 }}
+      transition={{ duration: 0.2 }}
+      className="text-gray-300 hover:text-green-400 transition-colors duration-300 text-sm flex items-center gap-2"
+    >
+      {label}
+    </motion.a>
+  )
+
   return (
-    <footer className="border-t border-green-primary/10 bg-gradient-to-t from-green-primary/5 to-transparent py-16 px-6">
+    <footer className="border-t border-green-primary/10 bg-gradient-to-b from-transparent via-green-primary/[0.03] to-transparent py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
+        {/* Main Content Grid */}
+        <div className="grid md:grid-cols-3 gap-16 mb-12">
+          {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="space-y-3"
           >
-            <h3 className="text-xl font-bold text-green-primary mb-2">Gabriel Silvano</h3>
-            <p className="text-gray-medium text-sm">Desenvolvedor Full Stack • IA • Automação</p>
+            <h3 className="text-xl font-bold text-green-primary">Gabriel Silvano</h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Desenvolvedor Full Stack focado em APIs, dados e aplicações inteligentes.
+            </p>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Navigation Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.6 }}
             viewport={{ once: true }}
+            className="space-y-4"
           >
-            <h4 className="font-semibold mb-4">Links</h4>
-            <div className="space-y-2">
-              <a href="#" className="text-gray-medium hover:text-green-primary transition-colors text-sm">
-                Início
-              </a>
-              <a href="#projetos" className="text-gray-medium hover:text-green-primary transition-colors text-sm">
-                Projetos
-              </a>
-              <a href="#stack" className="text-gray-medium hover:text-green-primary transition-colors text-sm">
-                Stack
-              </a>
+            <h4 className="text-sm font-semibold text-gray-200 uppercase tracking-wider">
+              Navegação
+            </h4>
+            <div className="space-y-3">
+              <LinkItem href="#" label="Início" />
+              <LinkItem href="#projetos" label="Projetos" />
+              <LinkItem href="#stack" label="Stack" />
+              <LinkItem href="#experiencia" label="Experiência" />
             </div>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             viewport={{ once: true }}
+            className="space-y-4"
           >
-            <h4 className="font-semibold mb-4">Social</h4>
-            <div className="space-y-2">
-              <a href="https://github.com/Gabrielsvdata" target="_blank" rel="noopener noreferrer" className="text-gray-medium hover:text-green-primary transition-colors text-sm">
-                GitHub
-              </a>
-              <a href="https://linkedin.com/in/gabriel-silvano-vieira" target="_blank" rel="noopener noreferrer" className="text-gray-medium hover:text-green-primary transition-colors text-sm">
-                LinkedIn
-              </a>
-              <a href="mailto:gabrielsilvanovieira7@gmail.com" className="text-gray-medium hover:text-green-primary transition-colors text-sm">
-                Email
-              </a>
+            <h4 className="text-sm font-semibold text-gray-200 uppercase tracking-wider">
+              Social
+            </h4>
+            <div className="space-y-3">
+              <LinkItem 
+                href="https://github.com/Gabrielsvdata" 
+                label="GitHub" 
+                external 
+              />
+              <LinkItem 
+                href="https://linkedin.com/in/gabriel-silvano-vieira" 
+                label="LinkedIn" 
+                external 
+              />
+              <LinkItem 
+                href="mailto:gabrielsilvanovieira7@gmail.com" 
+                label="Email" 
+              />
             </div>
           </motion.div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-green-primary/10 pt-8">
-          <p className="text-gray-dim text-sm text-center">
+        {/* Divider & Copyright */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="border-t border-green-primary/10 pt-8"
+        >
+          <p className="text-gray-400 text-xs text-center tracking-wide">
             © {currentYear} Gabriel Silvano. Todos os direitos reservados.
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 const projects = [
@@ -81,6 +81,39 @@ const projects = [
 export default function ProjectsSupabase() {
   const featuredProject = projects.find(p => p.featured)
   const secondaryProjects = projects.filter(p => !p.featured)
+  const [hoveredProjectId, setHoveredProjectId] = useState(null)
+  const videoRef = useRef(null)
+
+  const handleMouseEnter = (projectId) => {
+    if (projectId === 5) {
+      setHoveredProjectId(projectId)
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.currentTime = 4
+          const playPromise = videoRef.current.play()
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                console.log('Vídeo tocando')
+              })
+              .catch(error => {
+                console.log('Erro ao tocar:', error.message)
+              })
+          }
+        }
+      }, 100)
+    }
+  }
+
+  const handleMouseLeave = (projectId) => {
+    if (projectId === 5) {
+      setHoveredProjectId(null)
+      if (videoRef.current) {
+        videoRef.current.pause()
+        videoRef.current.currentTime = 0
+      }
+    }
+  }
 
   return (
     <section id="projetos" className="py-32 px-6 relative overflow-hidden">
@@ -112,12 +145,12 @@ export default function ProjectsSupabase() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-32"
+          className="mb-32 -mx-6"
         >
-          <a href={featuredProject.link} target="_blank" rel="noopener noreferrer" className="group">
-            <div className="relative overflow-hidden rounded-2xl border border-green-primary/30 bg-gradient-to-br from-green-primary/8 to-transparent p-8 md:p-16 hover:border-green-primary/60 transition-all duration-500 hover:shadow-[0_0_60px_rgba(34,197,94,0.15)]">
+          <a href={featuredProject.link} target="_blank" rel="noopener noreferrer" className="group block">
+            <div className="relative overflow-hidden rounded-none md:rounded-2xl border-0 md:border border-green-primary/30 bg-gradient-to-br from-green-primary/8 to-transparent px-6 md:p-16 py-8 md:py-16 hover:border-green-primary/60 transition-all duration-500 hover:shadow-[0_0_60px_rgba(34,197,94,0.15)]">
               {/* Badge */}
-              <div className="absolute top-8 right-8 md:top-12 md:right-12">
+              <div className="absolute top-6 md:top-12 right-6 md:right-12 z-10">
                 <motion.span
                   whileHover={{ scale: 1.1 }}
                   className="px-4 py-2 rounded-full bg-green-primary/10 border border-green-primary/40 text-green-primary text-sm font-semibold cursor-default"
@@ -126,7 +159,7 @@ export default function ProjectsSupabase() {
                 </motion.span>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
                 {/* Content */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -140,39 +173,39 @@ export default function ProjectsSupabase() {
                     </span>
                   </div>
 
-                  <h3 className="text-4xl md:text-5xl font-bold mb-2 text-gray-light group-hover:text-green-glow transition-colors">
+                  <h3 className="text-3xl md:text-5xl font-bold mb-2 text-gray-light group-hover:text-green-glow transition-colors">
                     {featuredProject.title}
                   </h3>
-                  <p className="text-green-primary text-xl mb-8">{featuredProject.subtitle}</p>
+                  <p className="text-green-primary text-lg md:text-xl mb-8">{featuredProject.subtitle}</p>
 
                   {/* Problem */}
-                  <div className="mb-8 p-4 rounded-lg bg-dark-bg/50 border border-green-primary/10">
+                  <div className="mb-6 md:mb-8 p-4 rounded-lg bg-dark-bg/50 border border-green-primary/10">
                     <p className="text-gray-medium text-sm font-semibold mb-2">O Problema</p>
-                    <p className="text-gray-light">{featuredProject.problem}</p>
+                    <p className="text-gray-light text-sm md:text-base">{featuredProject.problem}</p>
                   </div>
 
                   {/* Solution */}
-                  <div className="mb-8 p-4 rounded-lg bg-green-primary/5 border border-green-primary/20">
+                  <div className="mb-6 md:mb-8 p-4 rounded-lg bg-green-primary/5 border border-green-primary/20">
                     <p className="text-green-primary text-sm font-semibold mb-2">Solução</p>
-                    <p className="text-gray-light">{featuredProject.solution}</p>
+                    <p className="text-gray-light text-sm md:text-base">{featuredProject.solution}</p>
                   </div>
 
                   {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 mb-8">
+                  <div className="grid grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
                     {featuredProject.stats.map((stat, idx) => (
                       <motion.div
                         key={idx}
                         whileHover={{ y: -4 }}
                         className="p-3 rounded-lg border border-green-primary/20 text-center group-hover:border-green-primary/40 transition-all"
                       >
-                        <p className="text-green-primary font-bold">{stat.value}</p>
+                        <p className="text-green-primary font-bold text-sm md:text-base">{stat.value}</p>
                         <p className="text-gray-dim text-xs">{stat.label}</p>
                       </motion.div>
                     ))}
                   </div>
 
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-8">
+                  <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
                     {featuredProject.tech.map((tech) => (
                       <span
                         key={tech}
@@ -184,8 +217,8 @@ export default function ProjectsSupabase() {
                   </div>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-2 text-green-primary font-semibold group-hover:gap-4 transition-all text-lg">
-                    Explorar Projeto <span className="text-xl">→</span>
+                  <div className="flex items-center gap-2 text-green-primary font-semibold group-hover:gap-4 transition-all text-base md:text-lg">
+                    Explorar Projeto <span className="text-lg md:text-xl">→</span>
                   </div>
                 </motion.div>
 
@@ -195,13 +228,32 @@ export default function ProjectsSupabase() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="relative h-80 md:h-96 rounded-xl overflow-hidden border border-green-primary/30 bg-gradient-to-br from-dark-secondary to-dark-tertiary group-hover:border-green-primary/60 transition-all"
+                  className="relative w-full h-64 md:h-[550px] rounded-xl overflow-hidden border border-green-primary/30 bg-gradient-to-br from-dark-secondary to-dark-tertiary group-hover:border-green-primary/60 transition-all flex items-center justify-center"
+                  onMouseEnter={() => handleMouseEnter(featuredProject.id)}
+                  onMouseLeave={() => handleMouseLeave(featuredProject.id)}
                 >
                   <img
                     src={featuredProject.image}
-                    alt="SisPar Dashboard"
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    alt="Dashboard Preview"
+                    className={`w-full h-full object-contain transition-opacity duration-300 ${
+                      featuredProject.id === 5 && hoveredProjectId === 5 ? 'opacity-0' : 'opacity-80 group-hover:opacity-100'
+                    }`}
                   />
+
+                  {/* Video Preview - Only for Doação Solidária */}
+                  {featuredProject.id === 5 && (
+                    <video
+                      ref={videoRef}
+                      src="/images/doacao-video.mp4"
+                      className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-300 ${
+                        hoveredProjectId === 5 ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                    />
+                  )}
                 </motion.div>
               </div>
             </div>
@@ -275,13 +327,33 @@ export default function ProjectsSupabase() {
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       className={`order-1 ${isEven ? 'md:order-2' : 'md:order-1'}`}
+                      onMouseEnter={() => handleMouseEnter(project.id)}
+                      onMouseLeave={() => handleMouseLeave(project.id)}
                     >
                       <div className="relative h-64 md:h-80 rounded-lg overflow-hidden border border-green-primary/20 bg-gradient-to-br from-dark-secondary to-dark-tertiary group-hover:border-green-primary/50 transition-all">
+                        {/* Static Image */}
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+                            project.id === 5 && hoveredProjectId === 5 ? 'opacity-0' : 'opacity-80 group-hover:opacity-100'
+                          }`}
                         />
+
+                        {/* Video Preview - Only for Doação Solidária */}
+                        {project.id === 5 && (
+                          <video
+                            ref={videoRef}
+                            src="/images/doacao-video.mp4"
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+                              hoveredProjectId === 5 ? 'opacity-100' : 'opacity-0'
+                            }`}
+                            muted
+                            loop
+                            playsInline
+                            preload="auto"
+                          />
+                        )}
                       </div>
                     </motion.div>
                   </div>
