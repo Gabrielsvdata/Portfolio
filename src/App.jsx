@@ -1,55 +1,48 @@
 import React, { useState, useEffect } from 'react'
-import Navigation from './components/Navigation'
-import Hero from './components/Hero'
-import About from './components/About'
-import Projects from './components/Projects'
-import Expertise from './components/Expertise'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import CustomCursor from './components/CustomCursor'
+import { motion } from 'framer-motion'
+import NavigationSupabase from './components/NavigationSupabase'
+import HeroSupabase from './components/HeroSupabase'
+import ProjectsSupabase from './components/ProjectsSupabase'
+import StackSupabase from './components/StackSupabase'
+import ExperienceSupabase from './components/ExperienceSupabase'
+import FooterSupabase from './components/FooterSupabase'
 import './App.scss'
 
 function App() {
-  const [scrollY, setScrollY] = useState(0)
-  const [activeSection, setActiveSection] = useState('home')
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY)
+    const handleMouseMove = (e) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY })
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
   return (
-    <div className="app parallax">
-      <CustomCursor />
-      <Navigation activeSection={activeSection} />
-      
-      <main>
-        <section id="home" onMouseEnter={() => setActiveSection('home')}>
-          <Hero scrollY={scrollY} />
+    <div className="relative w-full min-h-screen bg-dark-bg text-gray-light overflow-x-hidden">
+      {/* Custom Cursor */}
+      <motion.div
+        className="pointer-events-none fixed w-6 h-6 border-2 border-green-primary rounded-full z-50 mix-blend-screen opacity-60"
+        animate={{ x: cursorPosition.x - 12, y: cursorPosition.y - 12 }}
+        transition={{ type: 'spring', stiffness: 500, damping: 28 }}
+      />
+
+      <NavigationSupabase />
+
+      <main className="relative pt-16">
+        <HeroSupabase />
+        <ProjectsSupabase />
+        <section id="stack">
+          <StackSupabase />
         </section>
-        
-        <section id="about" onMouseEnter={() => setActiveSection('about')}>
-          <About />
-        </section>
-        
-        <section id="expertise" onMouseEnter={() => setActiveSection('expertise')}>
-          <Expertise />
-        </section>
-        
-        <section id="projects" onMouseEnter={() => setActiveSection('projects')}>
-          <Projects />
-        </section>
-        
-        <section id="contact" onMouseEnter={() => setActiveSection('contact')}>
-          <Contact />
+        <section id="experiencia">
+          <ExperienceSupabase />
         </section>
       </main>
 
-      <Footer />
+      <FooterSupabase />
     </div>
   )
 }

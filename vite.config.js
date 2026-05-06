@@ -5,6 +5,22 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
-  }
+    open: true,
+    cors: true,
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'three': ['three'],
+          'framer': ['framer-motion'],
+        },
+      },
+    },
+    target: 'esnext',
+    minify: 'terser',
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'framer-motion'],
+  },
 })

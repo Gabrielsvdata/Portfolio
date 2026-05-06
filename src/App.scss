@@ -1,25 +1,182 @@
+// Premium App Styles
+// Dark Tech Green Theme
+
+// Global Styles
 .app {
   width: 100%;
   min-height: 100vh;
-  background: var(--bg-dark);
-  position: relative;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-main {
-  width: 100%;
-  position: relative;
-  z-index: 1;
+// Smooth Transitions
+* {
+  transition: color 0.3s var(--transition-smooth),
+              background-color 0.3s var(--transition-smooth),
+              border-color 0.3s var(--transition-smooth);
 }
 
+// Section Padding
 section {
-  width: 100%;
   position: relative;
-  scroll-margin-top: 80px;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Fade in animations on load */
-@media (prefers-reduced-motion: no-preference) {
+// Text Animations
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.5),
+                 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(74, 222, 128, 0.8),
+                 0 0 40px rgba(34, 197, 94, 0.5);
+  }
+}
+
+// Box Shadow Animations
+@keyframes box-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.4);
+  }
+}
+
+// Glass Morphism Backdrop
+@supports (backdrop-filter: blur(1px)) {
+  .glass-effect,
+  .glass-effect-strong {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .glass-effect-strong {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+// Gradient Animations
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Custom Scrollbar (Firefox)
+* {
+  scrollbar-color: var(--green-primary) var(--bg-dark);
+  scrollbar-width: thin;
+}
+
+// Button Base Styles
+button {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s var(--transition-smooth);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--green-glow);
+    border-radius: inherit;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s var(--transition-smooth);
+  }
+
+  &:hover::before {
+    opacity: 0.1;
+  }
+}
+
+// Input Styles
+input,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s var(--transition-smooth);
+
+  &::placeholder {
+    color: var(--text-dim);
+  }
+
+  &:focus {
+    background-color: rgba(34, 197, 94, 0.05);
+  }
+}
+
+// Accessibility
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Dark Mode Support
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+  }
+}
+
+// Mobile Optimizations
+@media (max-width: 768px) {
   section {
-    animation: fadeInUp 0.8s ease-out;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  button {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+// Print Styles
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .glow-text,
+  .glow-box {
+    text-shadow: none;
+    box-shadow: none;
+  }
+}
+
+// Animation Performance
+@supports (will-change: transform) {
+  .group:hover > *,
+  button:hover,
+  a:hover {
+    will-change: transform;
   }
 }
