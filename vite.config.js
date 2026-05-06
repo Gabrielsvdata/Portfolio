@@ -12,13 +12,11 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'three': ['three'],
           'framer': ['framer-motion'],
         },
       },
     },
     target: 'esnext',
-    minify: 'terser',
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion'],
