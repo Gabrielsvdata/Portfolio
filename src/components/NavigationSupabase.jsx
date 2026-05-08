@@ -40,16 +40,25 @@ export default function NavigationSupabase() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="hidden md:flex gap-3 items-center">
+        <div className="hidden md:flex gap-2 items-center">
+          <motion.a
+            href="https://wa.me/5513991689394"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 border border-green-primary/25 text-green-primary rounded-lg hover:border-green-primary/60 hover:bg-green-primary/5 transition-all text-sm font-medium"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            WhatsApp
+          </motion.a>
           <motion.a
             href="/curriculo_gabriel_silvano.pdf"
             download
-            className="px-4 py-2 border border-green-primary/30 text-green-primary rounded-lg hover:border-green-primary hover:bg-green-primary/5 transition-all text-sm font-medium flex items-center gap-2"
+            className="px-4 py-2 border border-green-primary/25 text-green-primary rounded-lg hover:border-green-primary/60 hover:bg-green-primary/5 transition-all text-sm font-medium"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            title="Download Currículo"
           >
-            <span>📄</span> CV
+            CV
           </motion.a>
           <motion.a
             href="https://github.com/Gabrielsvdata"
@@ -93,21 +102,32 @@ export default function NavigationSupabase() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/curriculo_gabriel_silvano.pdf"
-                download
-                className="block px-4 py-2 border border-green-primary/30 text-green-primary rounded-lg text-center hover:bg-green-primary/5 transition-all"
-              >
-                📄 Download CV
-              </a>
-              <a
-                href="https://github.com/Gabrielsvdata"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-2 border border-green-primary/50 text-green-primary rounded-lg text-center"
-              >
-                GitHub
-              </a>
+              <div className="pt-2 space-y-2 border-t border-green-primary/10">
+                <a
+                  href="https://wa.me/5513991689394"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 border border-green-primary/25 text-green-primary rounded text-center hover:bg-green-primary/5 transition-all text-sm"
+                  onClick={() => setIsOpen(false)}
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href="/curriculo_gabriel_silvano.pdf"
+                  download
+                  className="block px-3 py-2 border border-green-primary/25 text-green-primary rounded text-center hover:bg-green-primary/5 transition-all text-sm"
+                >
+                  CV
+                </a>
+                <a
+                  href="https://github.com/Gabrielsvdata"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 border border-green-primary/40 text-green-primary rounded text-center hover:bg-green-primary/5 transition-all text-sm"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

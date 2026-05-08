@@ -30,8 +30,8 @@ export default function StackSupabase() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Stack <span className="text-green-primary">Técnico</span>
           </h2>
-          <p className="text-gray-medium text-lg">
-            Tecnologias e ferramentas que uso para construir sistemas escaláveis.
+          <p className="text-gray-medium text-lg max-w-2xl">
+            Ferramentas e tecnologias que uso para arquitetar sistemas escaláveis, APIs de alta performance e aplicações inteligentes.
           </p>
         </motion.div>
 

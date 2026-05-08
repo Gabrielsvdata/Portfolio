@@ -32,7 +32,7 @@ export default function FooterSupabase() {
           >
             <h3 className="text-xl font-bold text-green-primary">Gabriel Silvano</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Desenvolvedor Full Stack focado em APIs, dados e aplicações inteligentes.
+              Engenheiro de Software especializado em APIs escaláveis, sistemas inteligentes e dados em tempo real. Focado em arquitetura de produto e aplicações tecnológicas.
             </p>
           </motion.div>
 
@@ -64,13 +64,17 @@ export default function FooterSupabase() {
             className="space-y-4"
           >
             <h4 className="text-sm font-semibold text-gray-200 uppercase tracking-wider">
-              Social
+              Contato
             </h4>
             <div className="space-y-3">
               <LinkItem 
-                href="https://github.com/Gabrielsvdata" 
-                label="GitHub" 
+                href="https://wa.me/5513991689394"
+                label="WhatsApp" 
                 external 
+              />
+              <LinkItem 
+                href="mailto:gabrielsilvanovieira7@gmail.com" 
+                label="Email" 
               />
               <LinkItem 
                 href="https://linkedin.com/in/gabriel-silvano-vieira" 
@@ -78,8 +82,9 @@ export default function FooterSupabase() {
                 external 
               />
               <LinkItem 
-                href="mailto:gabrielsilvanovieira7@gmail.com" 
-                label="Email" 
+                href="https://github.com/Gabrielsvdata" 
+                label="GitHub" 
+                external 
               />
             </div>
           </motion.div>

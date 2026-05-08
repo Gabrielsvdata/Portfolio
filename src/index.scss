@@ -30,9 +30,10 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: auto;
 }
 
-/* Scrollbar Styling */
+/* Scrollbar Styling - Enhanced */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -57,7 +58,16 @@ body {
   color: var(--bg-dark);
 }
 
-/* Utility Classes */
+/* Radial Gradient for Vignette */
+.bg-radial-gradient {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+/* Utility Classes - Enhanced */
 .glow-text {
   text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
   
@@ -86,7 +96,7 @@ body {
   border: 1px solid rgba(34, 197, 94, 0.15);
 }
 
-/* Animations */
+/* Animations - Refined & Cinematic */
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -139,15 +149,43 @@ body {
   }
 }
 
-/* Typography */
+/* Cinematic Scale In */
+@keyframes cinematic-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Subtle Parallax */
+@keyframes parallax-subtle {
+  0%, 100% { transform: translateZ(0); }
+  50% { transform: translateZ(10px); }
+}
+
+/* Typography - Premium & Clear */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
 }
 
 p {
   font-weight: 400;
   line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
 a {
@@ -157,6 +195,7 @@ a {
 
   &:hover {
     color: var(--green-glow);
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
   }
 }
 
@@ -165,6 +204,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  background: none;
 }
 
 /* Global overrides */

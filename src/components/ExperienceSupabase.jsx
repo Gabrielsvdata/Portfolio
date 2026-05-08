@@ -39,23 +39,23 @@ export default function ExperienceSupabase() {
               <div className="flex justify-between items-start gap-4 mb-3">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-light">Stone Pagamentos</h3>
-                  <p className="text-green-primary text-sm font-medium">Técnico de Suprimentos</p>
+                  <p className="text-green-primary text-sm font-medium">Técnico de Suprimentos • Análise de Dados</p>
                 </div>
                 <span className="text-gray-medium text-sm whitespace-nowrap">2021 – Atual</span>
               </div>
 
-              <ul className="space-y-2 text-gray-medium">
+              <ul className="space-y-2 text-gray-medium text-sm">
                 <li className="flex gap-2">
                   <span className="text-green-primary">→</span>
-                  <span>Análise de dados com <strong>SQL</strong> e <strong>Metabase</strong> para tomada de decisão</span>
+                  <span>Queries avançadas com <strong>SQL</strong> e <strong>Metabase</strong> para analytics estratégico</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-green-primary">→</span>
-                  <span>Desenvolvimento de queries complexas e suporte a sistemas</span>
+                  <span>Automação de processos logísticos e auditoria de dados críticos</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-green-primary">→</span>
-                  <span>Auditoria e controle de estoque e processos logísticos</span>
+                  <span>Suporte a sistemas e inteligência de negócios</span>
                 </li>
               </ul>
             </div>

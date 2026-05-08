@@ -1,5 +1,5 @@
 // Premium App Styles
-// Dark Tech Green Theme
+// Dark Tech Green Theme - Refined Cinematographic Experience
 
 // Global Styles
 .app {
@@ -18,14 +18,41 @@
               border-color 0.3s var(--transition-smooth);
 }
 
-// Section Padding
+// Section Padding & Refinement
 section {
   position: relative;
   width: 100%;
   overflow: hidden;
+  
+  // Improved spacing for better hierarchy
+  &:not(:first-of-type) {
+    border-top: 1px solid rgba(34, 197, 94, 0.05);
+  }
 }
 
-// Text Animations
+// Enhanced Typography Hierarchy
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+// Text Animations - Enhanced
 @keyframes text-glow {
   0%, 100% {
     text-shadow: 0 0 10px rgba(34, 197, 94, 0.5),
@@ -37,7 +64,17 @@ section {
   }
 }
 
-// Box Shadow Animations
+// Subtle Cinematic Blur Animation
+@keyframes cinematic-blur {
+  0%, 100% {
+    backdrop-filter: blur(8px);
+  }
+  50% {
+    backdrop-filter: blur(12px);
+  }
+}
+
+// Box Shadow Animations - Refined
 @keyframes box-glow {
   0%, 100% {
     box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
@@ -47,7 +84,7 @@ section {
   }
 }
 
-// Glass Morphism Backdrop
+// Enhanced Glass Morphism
 @supports (backdrop-filter: blur(1px)) {
   .glass-effect,
   .glass-effect-strong {
@@ -74,19 +111,32 @@ section {
   }
 }
 
+// Cinematic Fade Effect
+@keyframes cinematic-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 // Custom Scrollbar (Firefox)
 * {
   scrollbar-color: var(--green-primary) var(--bg-dark);
   scrollbar-width: thin;
 }
 
-// Button Base Styles
+// Button Base Styles - Enhanced
 button {
   font-weight: 600;
   letter-spacing: 0.5px;
   transition: all 0.3s var(--transition-smooth);
   position: relative;
-
+  outline: none;
+  
   &::before {
     content: '';
     position: absolute;
@@ -101,6 +151,10 @@ button {
   &:hover::before {
     opacity: 0.1;
   }
+  
+  // Prevent text selection issues
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 // Input Styles

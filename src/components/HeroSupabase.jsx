@@ -23,8 +23,8 @@ export default function HeroSupabase() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mb-6"
         >
-          <span className="inline-block px-4 py-2 rounded-full border border-green-primary/30 text-green-primary text-sm font-medium backdrop-blur-sm">
-            Desenvolvedor Full Stack
+          <span className="inline-block px-4 py-2 rounded-full border border-green-primary/25 text-green-primary text-xs font-semibold backdrop-blur-sm tracking-wider uppercase">
+            Full Stack Engineer
           </span>
         </motion.div>
 
@@ -38,16 +38,16 @@ export default function HeroSupabase() {
           Gabriel <span className="text-green-primary">Silvano</span>
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Subtitle - Strategic positioning */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-xl md:text-2xl text-gray-medium mb-12 leading-relaxed"
         >
-          Construo sistemas com <span className="text-green-primary">APIs robustas</span>,{' '}
-          <span className="text-green-primary">IA aplicada</span> e{' '}
-          <span className="text-green-primary">front-end moderno</span>
+          Engenheiro de Software especializado em <span className="text-green-primary">APIs escaláveis</span>,{' '}
+          <span className="text-green-primary">sistemas inteligentes</span> e{' '}
+          <span className="text-green-primary">dados em tempo real</span>
         </motion.p>
 
         {/* CTA Buttons */}

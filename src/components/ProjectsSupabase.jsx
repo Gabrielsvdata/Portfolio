@@ -60,11 +60,11 @@ const projects = [
   {
     id: 5,
     title: 'Doação Solidária',
-    subtitle: 'Plataforma de Impacto Social',
-    problem: 'ONGs perdem doadores por falta de transparência, automação e rastreamento de impacto.',
-    solution: 'Plataforma que automatiza doações, rastreia impacto com 100% de transparência e constrói comunidade engajada.',
-    description: 'Sistema inteligente de recomendação para conectar doadores com instituições em cenários de crise humanitária, com foco em eficiência e transparência.',
-    tech: ['Backend', 'Automação', 'Data Analytics', 'SQLite3'],
+    subtitle: 'Plataforma de Impacto Social com IA',
+    problem: 'ONGs perdem oportunidades de financiamento por falta de transparência, automação e rastreamento em tempo real do impacto social.',
+    solution: 'Plataforma inteligente que conecta doadores com instituições através de algoritmo recomendador, rastreamento de impacto 100% transparente e comunidade engajada.',
+    description: 'Sistema full-stack de recomendação que analisa cenários humanitários, prioriza impacto máximo e automatiza a distribuição de recursos em crises.',
+    tech: ['Backend Inteligente', 'API REST', 'Data Analytics', 'Automação'],
     featured: true,
     link: 'https://doacaosolidaria.vercel.app/',
     github: 'https://github.com/Gabrielsvdata/doacao-solidaria-backend',
@@ -135,7 +135,7 @@ export default function ProjectsSupabase() {
             Produtos em <span className="text-green-primary">Produção</span>
           </h2>
           <p className="text-gray-medium text-lg max-w-2xl">
-            Soluções reais resolvendo problemas reais. Cada projeto é um sistema em produção, não um exercício.
+            Sistemas reais em operação resolvendo problemas complexos com tecnologia escalável.
           </p>
         </motion.div>
 
