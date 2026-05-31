@@ -1,8 +1,10 @@
 import React from 'react'
 import NavigationSupabase from './components/NavigationSupabase'
 import HeroSupabase from './components/HeroSupabase'
+import AreasSupabase from './components/AreasSupabase'
 import JourneySupabase from './components/JourneySupabase'
 import HighlightsSupabase from './components/HighlightsSupabase'
+import DiferenciaisSupabase from './components/DiferenciaisSupabase'
 import ProjectsSupabase from './components/ProjectsSupabase'
 import StackSupabase from './components/StackSupabase'
 import ExperienceSupabase from './components/ExperienceSupabase'
@@ -22,8 +24,10 @@ function App() {
 
         <main className="relative pt-16">
           <HeroSupabase />
+          <AreasSupabase />
           <JourneySupabase />
           <HighlightsSupabase />
+          <DiferenciaisSupabase />
           <ProjectsSupabase />
           <section id="stack">
             <StackSupabase />

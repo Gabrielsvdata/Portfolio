@@ -118,9 +118,16 @@ export default function ExperienceSupabase() {
             <div className="flex justify-between items-start">
               <div>
                 <p className="font-semibold text-gray-light">Análise e Desenvolvimento de Sistemas</p>
-                <p className="text-gray-medium text-sm">FATEC (em andamento)</p>
+                <p className="text-gray-medium text-sm">FATEC Praia Grande (em andamento)</p>
               </div>
-              <span className="text-green-primary text-sm">2026 - 2027</span>
+              <span className="text-green-primary text-sm">2023 - 2027</span>
+            </div>
+            <div className="flex justify-between items-start">
+              <div>
+                <p className="font-semibold text-gray-light">Técnico em Logística</p>
+                <p className="text-gray-medium text-sm">ETEC São Vicente</p>
+              </div>
+              <span className="text-green-primary text-sm">2019 - 2020</span>
             </div>
             <div className="flex justify-between items-start">
               <div>

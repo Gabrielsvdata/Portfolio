@@ -7,6 +7,7 @@ export default function NavigationSupabase() {
   const navLinks = [
     { label: 'Inicio', href: '#' },
     { label: 'Trajetória', href: '#trajetoria' },
+    { label: 'Diferenciais', href: '#diferenciais' },
     { label: 'Projetos', href: '#projetos' },
     { label: 'Stack', href: '#stack' },
     { label: 'Experiência', href: '#experiencia' },

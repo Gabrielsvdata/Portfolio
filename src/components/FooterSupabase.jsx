@@ -50,6 +50,7 @@ export default function FooterSupabase() {
             <div className="space-y-3">
               <LinkItem href="#" label="Início" />
               <LinkItem href="#trajetoria" label="Trajetória" />
+              <LinkItem href="#diferenciais" label="Diferenciais" />
               <LinkItem href="#projetos" label="Projetos" />
               <LinkItem href="#stack" label="Stack" />
               <LinkItem href="#experiencia" label="Experiência" />

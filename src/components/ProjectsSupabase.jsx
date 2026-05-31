@@ -11,6 +11,7 @@ const projects = [
     impact: 'Python · Flask · PostgreSQL · IA',
     description: 'Backend Python/Flask com arquitetura MVC, múltiplos ambientes (dev/prod/test), deploy no Render com PostgreSQL em produção e documentação Swagger completa em /apidocs.',
     tech: ['Python', 'Flask', 'PostgreSQL', 'Groq (LLaMA)', 'Google Gemini', 'OCR', 'Docker', 'Swagger'],
+    concepts: ['API REST', 'Arquitetura Backend', 'Persistência de Dados', 'Integração Frontend e Backend', 'Modelagem de Dados'],
     link: 'https://projeto-sispar.vercel.app/#/',
     github: 'https://github.com/Gabrielsvdata/Sispar-Backend',
     image: '/images/sispar.png',
@@ -28,6 +29,7 @@ const projects = [
     solution: 'Chatbot especializado construído com Google Gemini 2.5 Flash, com instruções de sistema customizadas, histórico de conversa estruturado e limite controlado de interações por sessão.',
     description: 'Implementação em Python com engenharia de prompt avançada: system instructions definindo persona, contexto de negócio e regras de comportamento. Gerenciamento de histórico de conversa com estrutura de dicionário para manter contexto entre turnos.',
     tech: ['Python', 'Google Gemini 2.5 Flash', 'Engenharia de Prompt', 'python-dotenv'],
+    concepts: ['IA Generativa', 'Engenharia de Prompt', 'Processamento de Linguagem Natural', 'Fluxo Conversacional'],
     link: 'https://github.com/Gabrielsvdata/Chatbot-especialista',
     image: '/images/chatbot-especialista-screenshot.png',
     icon: '💬',
@@ -40,6 +42,7 @@ const projects = [
     solution: 'API REST em Node.js/Express com banco de dados relacional SQLite, relacionamento entre entidades via INNER JOIN e proteção contra SQL Injection com queries parametrizadas.',
     description: 'Backend com rotas para cadastro de pacientes, registros diários (pressão arterial, alimentação, observações) e consulta de histórico completo por paciente. Deploy no Render com banco de dados auto-provisionado.',
     tech: ['Node.js', 'Express', 'SQLite', 'SQL (INNER JOIN)', 'REST API', 'Render'],
+    concepts: ['Arquitetura Backend', 'CRUD', 'Banco de Dados Relacional', 'APIs REST'],
     link: 'https://gestao-cuidadora-api.onrender.com',
     github: 'https://github.com/Gabrielsvdata/GESTAO-CUIDADORA-API',
     image: '/images/gestao-cuidadora-screenshot.png',
@@ -53,6 +56,7 @@ const projects = [
     solution: 'API Flask com LLaMA 3 70B via Groq, autenticação JWT em cookies HttpOnly, filtro automático de conteúdo inapropriado, rate limiting, CORS/CSP/HSTS e perfis múltiplos de crianças por responsável.',
     description: 'Arquitetura de serviços separados: auth_service (JWT), chat_service (Groq integration), memory_service (histórico). Deploy no Render com Gunicorn (1 worker forçado para memória consistente) e suporte a MySQL ou in-memory storage.',
     tech: ['Python', 'Flask', 'Groq (LLaMA 3 70B)', 'JWT', 'Rate Limiting', 'bcrypt', 'Gunicorn', 'Render'],
+    concepts: ['Inteligência Artificial', 'Integração de Serviços', 'Processamento de Dados', 'APIs REST'],
     link: 'https://github.com/Gabrielsvdata/KidIA-backend',
     image: '/images/kidIA.jpeg',
     icon: '🧠',
@@ -65,6 +69,7 @@ const projects = [
     solution: 'API Node.js/Express com algoritmo de scoring que calcula prioridade por percentual de estoque, retornando TOP 3 instituições ordenadas por urgência. Painel admin com autenticação por bcrypt e documentação Swagger completa.',
     description: 'Backend com módulo rules.js centralizando toda a lógica de prioridade (CRÍTICO/BAIXO/MÉDIO/BOM/EXCESSO), validação de entrada via Zod schemas, histórico de movimentações e rotas separadas por perfil (doador público vs. admin autenticado).',
     tech: ['Node.js', 'Express', 'SQLite', 'bcrypt', 'Zod', 'Swagger/OpenAPI', 'Render'],
+    concepts: ['Persistência de Dados', 'Regras de Negócio', 'APIs REST', 'Estruturação de Dados'],
     featured: true,
     link: 'https://doacaosolidaria.vercel.app/',
     github: 'https://github.com/Gabrielsvdata/doacao-solidaria-backend',
@@ -190,6 +195,20 @@ export default function ProjectsSupabase() {
                     <p className="text-gray-light text-sm md:text-base">{featuredProject.solution}</p>
                   </div>
 
+                  {/* Conceitos Aplicados */}
+                  {featuredProject.concepts && (
+                    <div className="mb-6 md:mb-8">
+                      <p className="text-gray-dim text-xs font-semibold uppercase tracking-wider mb-3">Conceitos Aplicados</p>
+                      <div className="flex flex-wrap gap-2">
+                        {featuredProject.concepts.map((concept) => (
+                          <span key={concept} className="px-2.5 py-1 text-xs bg-dark-bg/60 border border-green-primary/15 text-gray-medium rounded-md">
+                            {concept}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-8">
                     {featuredProject.stats.map((stat, idx) => (
@@ -303,6 +322,20 @@ export default function ProjectsSupabase() {
                           <p className="text-green-primary text-sm font-semibold mb-2">Solução:</p>
                           <p className="text-gray-light">{project.solution}</p>
                         </div>
+
+                        {/* Conceitos Aplicados */}
+                        {project.concepts && (
+                          <div className="mb-6">
+                            <p className="text-gray-dim text-xs font-semibold uppercase tracking-wider mb-3">Conceitos Aplicados</p>
+                            <div className="flex flex-wrap gap-2">
+                              {project.concepts.map((concept) => (
+                                <span key={concept} className="px-2.5 py-1 text-xs bg-dark-bg/60 border border-green-primary/15 text-gray-medium rounded-md">
+                                  {concept}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
 
                         {/* Tech Stack */}
                         <div className="flex flex-wrap gap-2 mb-6">

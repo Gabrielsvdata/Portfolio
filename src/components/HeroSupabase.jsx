@@ -45,7 +45,7 @@ export default function HeroSupabase() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-xl md:text-2xl text-gray-medium mb-4 leading-relaxed"
         >
-          Desenvolvedor Full Stack com foco em{' '}
+          Desenvolvendo soluções com{' '}
           <span className="text-green-primary">Backend</span>,{' '}
           <span className="text-green-primary">Dados</span> e{' '}
           <span className="text-green-primary">Inteligência Artificial</span>
@@ -60,11 +60,12 @@ export default function HeroSupabase() {
         >
           Profissional em transição de carreira da área de Logística e Operações para Tecnologia,
           com experiência corporativa em análise de dados, SQL e suporte a sistemas.
-          Desenvolvo soluções utilizando <span className="text-green-primary/80">Python</span>,{' '}
-          <span className="text-green-primary/80">Node.js</span>,{' '}
-          <span className="text-green-primary/80">SQL</span>,{' '}
-          <span className="text-green-primary/80">APIs REST</span> e{' '}
-          <span className="text-green-primary/80">IA aplicada</span> para resolver desafios reais de negócio.
+          Desenvolvo aplicações Full Stack com foco em{' '}
+          <span className="text-green-primary/80">Backend</span>,{' '}
+          <span className="text-green-primary/80">APIs</span>,{' '}
+          <span className="text-green-primary/80">Dados</span> e{' '}
+          <span className="text-green-primary/80">Inteligência Artificial</span>{' '}
+          para transformar desafios de negócio em soluções digitais.
         </motion.p>
 
         {/* CTA Buttons */}
