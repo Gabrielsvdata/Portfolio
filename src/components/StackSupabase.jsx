@@ -2,12 +2,42 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const stack = [
-  { category: 'Backend', items: ['Python', 'Node.js', 'Flask', 'Express', 'APIs REST'] },
-  { category: 'Banco de Dados', items: ['PostgreSQL', 'SQL', 'Metabase', 'Query Optimization'] },
-  { category: 'IA & ML', items: ['Machine Learning', 'LLM', 'NLP', 'Engenharia de Prompt', 'Deep Learning'] },
-  { category: 'DevOps', items: ['Docker', 'Git', 'CI/CD', 'Vercel', 'Cloud'] },
-  { category: 'Frontend', items: ['React', 'Tailwind CSS', 'JavaScript', 'Framer Motion'] },
-  { category: 'Metodologias', items: ['Scrum', 'Agile', 'API Design', 'Data Analysis'] },
+  {
+    category: 'Backend',
+    icon: '⚙️',
+    emphasis: true,
+    items: ['Python', 'Node.js', 'Flask', 'Express', 'APIs REST'],
+  },
+  {
+    category: 'Dados',
+    icon: '📊',
+    emphasis: true,
+    items: ['SQL', 'PostgreSQL', 'SQLite', 'Análise de Dados', 'Metabase'],
+  },
+  {
+    category: 'Inteligência Artificial',
+    icon: '🤖',
+    emphasis: true,
+    items: ['IA Generativa', 'Engenharia de Prompt', 'Groq (LLaMA)', 'Google Gemini', 'Integração de LLMs'],
+  },
+  {
+    category: 'Ferramentas',
+    icon: '🛠️',
+    emphasis: false,
+    items: ['Git', 'GitHub', 'Docker', 'Postman', 'Swagger / OpenAPI'],
+  },
+  {
+    category: 'Frontend',
+    icon: '🖥️',
+    emphasis: false,
+    items: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS'],
+  },
+  {
+    category: 'Segurança & Infra',
+    icon: '🔐',
+    emphasis: false,
+    items: ['JWT', 'bcrypt', 'CORS', 'Rate Limiting', 'Render / Vercel'],
+  },
 ]
 
 export default function StackSupabase() {
@@ -31,7 +61,7 @@ export default function StackSupabase() {
             Stack <span className="text-green-primary">Técnico</span>
           </h2>
           <p className="text-gray-medium text-lg max-w-2xl">
-            Ferramentas e tecnologias que uso para arquitetar sistemas escaláveis, APIs de alta performance e aplicações inteligentes.
+            Tecnologias organizadas por área de atuação — com foco em Backend, Dados e IA aplicada.
           </p>
         </motion.div>
 
@@ -44,11 +74,27 @@ export default function StackSupabase() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05, duration: 0.5 }}
               viewport={{ once: true }}
-              className="group p-6 rounded-xl border border-green-primary/20 bg-gradient-to-br from-green-primary/3 to-transparent hover:border-green-primary/50 transition-all duration-300"
+              className={`group p-6 rounded-xl border transition-all duration-300 ${
+                section.emphasis
+                  ? 'border-green-primary/35 bg-gradient-to-br from-green-primary/8 to-transparent hover:border-green-primary/60'
+                  : 'border-green-primary/15 bg-gradient-to-br from-green-primary/3 to-transparent hover:border-green-primary/40'
+              }`}
             >
-              <h3 className="text-lg font-semibold mb-4 text-green-primary group-hover:text-green-glow transition-colors">
-                {section.category}
-              </h3>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-lg">{section.icon}</span>
+                <h3 className={`text-lg font-semibold transition-colors ${
+                  section.emphasis
+                    ? 'text-green-primary group-hover:text-green-glow'
+                    : 'text-gray-light group-hover:text-green-primary'
+                }`}>
+                  {section.category}
+                </h3>
+                {section.emphasis && (
+                  <span className="ml-auto text-xs text-green-primary/60 border border-green-primary/20 px-2 py-0.5 rounded-full">
+                    foco
+                  </span>
+                )}
+              </div>
               <div className="flex flex-wrap gap-2">
                 {section.items.map((item) => (
                   <span

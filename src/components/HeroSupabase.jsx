@@ -24,7 +24,7 @@ export default function HeroSupabase() {
           className="mb-6"
         >
           <span className="inline-block px-4 py-2 rounded-full border border-green-primary/25 text-green-primary text-xs font-semibold backdrop-blur-sm tracking-wider uppercase">
-            Full Stack Engineer
+            Backend · Dados · IA
           </span>
         </motion.div>
 
@@ -43,11 +43,28 @@ export default function HeroSupabase() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-xl md:text-2xl text-gray-medium mb-12 leading-relaxed"
+          className="text-xl md:text-2xl text-gray-medium mb-4 leading-relaxed"
         >
-          Engenheiro de Software especializado em <span className="text-green-primary">APIs escaláveis</span>,{' '}
-          <span className="text-green-primary">sistemas inteligentes</span> e{' '}
-          <span className="text-green-primary">dados em tempo real</span>
+          Desenvolvedor Full Stack com foco em{' '}
+          <span className="text-green-primary">Backend</span>,{' '}
+          <span className="text-green-primary">Dados</span> e{' '}
+          <span className="text-green-primary">Inteligência Artificial</span>
+        </motion.p>
+
+        {/* Strategic description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.8 }}
+          className="text-base md:text-lg text-gray-medium mb-12 leading-relaxed max-w-2xl mx-auto"
+        >
+          Profissional em transição de carreira da área de Logística e Operações para Tecnologia,
+          com experiência corporativa em análise de dados, SQL e suporte a sistemas.
+          Desenvolvo soluções utilizando <span className="text-green-primary/80">Python</span>,{' '}
+          <span className="text-green-primary/80">Node.js</span>,{' '}
+          <span className="text-green-primary/80">SQL</span>,{' '}
+          <span className="text-green-primary/80">APIs REST</span> e{' '}
+          <span className="text-green-primary/80">IA aplicada</span> para resolver desafios reais de negócio.
         </motion.p>
 
         {/* CTA Buttons */}

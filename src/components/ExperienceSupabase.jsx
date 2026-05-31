@@ -38,24 +38,35 @@ export default function ExperienceSupabase() {
             <div className="group p-6 rounded-lg border border-green-primary/10 bg-gradient-to-r from-green-primary/5 to-transparent hover:border-green-primary/30 transition-all">
               <div className="flex justify-between items-start gap-4 mb-3">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-light">Stone Pagamentos</h3>
-                  <p className="text-green-primary text-sm font-medium">Técnico de Suprimentos • Análise de Dados</p>
+                  <h3 className="text-2xl font-bold text-gray-light">Stone</h3>
+                  <p className="text-green-primary text-sm font-medium">Técnico de Suprimentos • Análise de Dados & Sistemas</p>
                 </div>
                 <span className="text-gray-medium text-sm whitespace-nowrap">2021 – Atual</span>
               </div>
 
+              <p className="text-gray-medium text-sm mb-4 leading-relaxed">
+                Atuação em ambiente corporativo de alta escala no segmento de fintechs, com foco em
+                análise de dados, SQL, suporte a sistemas e processos operacionais. Essa experiência
+                fortaleceu minha visão sobre tecnologia aplicada a negócios e impulsionou minha
+                transição para a área de desenvolvimento de software.
+              </p>
+
               <ul className="space-y-2 text-gray-medium text-sm">
                 <li className="flex gap-2">
                   <span className="text-green-primary">→</span>
-                  <span>Queries avançadas com <strong>SQL</strong> e <strong>Metabase</strong> para analytics estratégico</span>
+                  <span>Uso de <strong className="text-gray-light">SQL</strong> e <strong className="text-gray-light">Metabase</strong> para geração de indicadores estratégicos e auditoria de dados</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-green-primary">→</span>
-                  <span>Automação de processos logísticos e auditoria de dados críticos</span>
+                  <span>Automação de processos operacionais e controle de estoque em ambiente de alto volume transacional</span>
                 </li>
                 <li className="flex gap-2">
                   <span className="text-green-primary">→</span>
-                  <span>Suporte a sistemas e inteligência de negócios</span>
+                  <span>Suporte a sistemas internos, identificação de inconsistências e resolução de problemas de dados em produção</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-primary">→</span>
+                  <span>Contato direto com fluxos de dados corporativos, o que fundamentou a transição para desenvolvimento de APIs e sistemas de dados</span>
                 </li>
               </ul>
             </div>

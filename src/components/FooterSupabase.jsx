@@ -32,7 +32,7 @@ export default function FooterSupabase() {
           >
             <h3 className="text-xl font-bold text-green-primary">Gabriel Silvano</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Engenheiro de Software especializado em APIs escaláveis, sistemas inteligentes e dados em tempo real. Focado em arquitetura de produto e aplicações tecnológicas.
+              Desenvolvedor Full Stack com foco em Backend, Dados e IA. Profissional em transição de carreira com experiência corporativa em SQL, análise de dados e suporte a sistemas.
             </p>
           </motion.div>
 
@@ -49,6 +49,7 @@ export default function FooterSupabase() {
             </h4>
             <div className="space-y-3">
               <LinkItem href="#" label="Início" />
+              <LinkItem href="#trajetoria" label="Trajetória" />
               <LinkItem href="#projetos" label="Projetos" />
               <LinkItem href="#stack" label="Stack" />
               <LinkItem href="#experiencia" label="Experiência" />
