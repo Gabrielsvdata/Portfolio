@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import HeroArt from './HeroArt'
 
 export default function HeroSupabase() {
   return (
@@ -14,8 +15,9 @@ export default function HeroSupabase() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center max-w-3xl mx-auto"
+        className="w-full max-w-6xl mx-auto grid md:grid-cols-[1.2fr_1fr] gap-12 items-center text-center md:text-left"
       >
+      <div>
         {/* Tagline */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -56,7 +58,7 @@ export default function HeroSupabase() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.8 }}
-          className="text-base md:text-lg text-gray-medium mb-12 leading-relaxed max-w-2xl mx-auto"
+          className="text-base md:text-lg text-gray-medium mb-12 leading-relaxed max-w-2xl mx-auto md:mx-0"
         >
           Profissional em transição de carreira da área de Logística e Operações para Tecnologia,
           com experiência corporativa em análise de dados, SQL e suporte a sistemas.
@@ -73,7 +75,7 @@ export default function HeroSupabase() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center"
         >
           <button
             onClick={() => document.getElementById('projetos').scrollIntoView({ behavior: 'smooth' })}
@@ -90,6 +92,10 @@ export default function HeroSupabase() {
             GitHub
           </a>
         </motion.div>
+
+      </div>
+
+        <HeroArt />
 
         {/* Scroll indicator */}
         <motion.div
