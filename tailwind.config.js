@@ -7,15 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-bg': 'rgb(var(--bg-dark-rgb) / <alpha-value>)',
-        'dark-secondary': 'rgb(var(--bg-secondary-rgb) / <alpha-value>)',
-        'dark-tertiary': 'rgb(var(--bg-tertiary-rgb) / <alpha-value>)',
-        'green-primary': 'rgb(var(--accent-rgb) / <alpha-value>)',
-        'green-glow': 'rgb(var(--glow-rgb) / <alpha-value>)',
-        'green-dark': 'rgb(var(--accent-dark-rgb) / <alpha-value>)',
-        'gray-light': 'rgb(var(--text-light-rgb) / <alpha-value>)',
-        'gray-medium': 'rgb(var(--text-medium-rgb) / <alpha-value>)',
-        'gray-dim': 'rgb(var(--text-dim-rgb) / <alpha-value>)',
+        paper: 'var(--paper)',
+        ink: 'var(--ink)',
+        mute: 'var(--mute)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -30,42 +24,8 @@ export default {
       spacing: {
         safe: 'max(1rem, env(safe-area-inset-bottom))',
       },
-      animation: {
-        'glow-pulse': 'glow-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'slide-up': 'slide-up 0.8s ease-out forwards',
-        'slide-down': 'slide-down 0.8s ease-out forwards',
-        'fade-in': 'fade-in 0.8s ease-out forwards',
-      },
-      keyframes: {
-        'glow-pulse': {
-          '0%, 100%': { textShadow: '0 0 10px rgb(var(--accent-rgb) / 0.5)' },
-          '50%': { textShadow: '0 0 20px rgb(var(--glow-rgb) / 0.8)' },
-        },
-        'float': {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        'slide-up': {
-          from: { opacity: '0', transform: 'translateY(40px)' },
-          to: { opacity: '1', transform: 'translateY(0)' },
-        },
-        'slide-down': {
-          from: { opacity: '0', transform: 'translateY(-40px)' },
-          to: { opacity: '1', transform: 'translateY(0)' },
-        },
-        'fade-in': {
-          from: { opacity: '0' },
-          to: { opacity: '1' },
-        },
-      },
       backdropFilter: {
         'glass': 'blur(10px)',
-      },
-      boxShadow: {
-        'glow-green': '0 0 20px rgb(var(--accent-rgb) / 0.3)',
-        'glow-green-strong': '0 0 40px rgb(var(--glow-rgb) / 0.4)',
-        'inner-glow': 'inset 0 0 20px rgb(var(--accent-rgb) / 0.1)',
       },
     },
   },
