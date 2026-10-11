@@ -6,7 +6,7 @@ const STEPS = [
   {
     year: '2019',
     title: 'Logística & Operações',
-    text: 'Mais de 5 anos em empresas de grande porte (Carrefour, Stone), lidando com processos, indicadores e o problema real antes de qualquer sistema.',
+    text: 'Mais de 5 anos em operações de grande porte, lidando com processos, indicadores e o problema real antes de qualquer sistema.',
   },
   {
     year: '2021',
