@@ -6,12 +6,13 @@ const PROJECTS = [
   {
     n: '01',
     title: 'Club Sette',
-    kind: 'E-commerce de moda — projeto vendido',
+    kind: 'Loja de camisas de futebol — projeto vendido',
     year: '2026',
-    text: 'Loja de roupas completa, desenvolvida sob encomenda e entregue ao cliente: catálogo, vitrine de produtos e fluxo de compra, com foco em performance e experiência mobile.',
+    text: 'E-commerce desenvolvido sob encomenda e entregue ao cliente: vitrine com destaques e descontos, catálogo completo de camisas, página de produto e identidade visual própria, com foco em experiência mobile.',
     tech: ['React', 'TypeScript', 'Node.js', 'Vercel'],
     link: 'https://club-sette-web.vercel.app/',
     image: '/images/club-sette.png',
+    portrait: true,
   },
   {
     n: '02',
@@ -85,7 +86,7 @@ export default function Projetos() {
                   {/* Tela do projeto: abre no hover (desktop) */}
                   <div className="hidden lg:block overflow-hidden max-h-0 group-hover:max-h-[300px] transition-[max-height] duration-500 ease-out">
                     <div className="mt-6 w-[400px] aspect-[16/10] border border-ink overflow-hidden">
-                      <img src={p.image} alt={p.title} className="w-full h-full object-cover object-left-top" style={{ filter: 'grayscale(1) contrast(1.05)' }} loading="lazy" />
+                      <img src={p.image} alt={p.title} className={`w-full h-full object-cover ${p.portrait ? 'object-top' : 'object-left-top'}`} style={{ filter: 'grayscale(1) contrast(1.05)' }} loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -103,7 +104,7 @@ export default function Projetos() {
 
                 {/* Imagem inline no mobile */}
                 <div className="md:col-span-12 lg:hidden border border-ink aspect-[16/9] overflow-hidden">
-                  <img src={p.image} alt={p.title} className="w-full h-full object-cover object-left-top" style={{ filter: 'grayscale(1)' }} loading="lazy" />
+                  <img src={p.image} alt={p.title} className={`w-full h-full object-cover ${p.portrait ? 'object-top' : 'object-left-top'}`} style={{ filter: 'grayscale(1)' }} loading="lazy" />
                 </div>
               </div>
             </motion.li>

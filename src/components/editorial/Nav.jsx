@@ -12,7 +12,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-ink">
+    <header className="sticky top-0 z-40 bg-paper border-b border-ink">
       <div className="px-5 md:px-10 h-14 flex items-center justify-between text-[13px] uppercase tracking-[0.18em]">
         <a href="#" className="font-semibold">Gabriel Silvano</a>
 
