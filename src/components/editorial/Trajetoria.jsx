@@ -16,7 +16,7 @@ const STEPS = [
   {
     year: '2024',
     title: 'Engenharia de software',
-    text: 'Formação em ADS na FATEC e cinco projetos publicados com backend próprio, APIs documentadas e IA integrada.',
+    text: 'Formado em Análise e Desenvolvimento de Sistemas. Projetos publicados com backend próprio, APIs documentadas e IA integrada, e finalista do hackathon da Oracle com o Finvise.',
   },
   {
     year: '2026',
@@ -29,7 +29,7 @@ const NUMBERS = [
   { v: '+5', l: 'anos de experiência corporativa' },
   { v: '05', l: 'projetos publicados' },
   { v: '04', l: 'linguagens no dia a dia' },
-  { v: 'ADS', l: 'FATEC, em andamento' },
+  { v: 'ADS', l: 'Tecnólogo, formado' },
 ]
 
 export default function Trajetoria() {

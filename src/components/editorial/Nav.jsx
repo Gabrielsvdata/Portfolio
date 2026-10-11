@@ -23,8 +23,9 @@ export default function Nav() {
         </nav>
 
         <div className="hidden md:flex items-center gap-6">
+          <a href="https://linkedin.com/in/gabriel-silvano-vieira" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">LinkedIn ↗</a>
           <a href="/curriculo_gabriel_silvano.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4">CV ↗</a>
-          <span className="font-mono text-[11px] normal-case tracking-normal">Santos · BR</span>
+          <span className="font-mono text-[11px] normal-case tracking-normal">São Paulo · BR</span>
         </div>
 
         <button
@@ -42,6 +43,7 @@ export default function Nav() {
           {LINKS.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
           ))}
+          <a href="https://linkedin.com/in/gabriel-silvano-vieira" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
           <a href="/curriculo_gabriel_silvano.pdf" target="_blank" rel="noopener noreferrer">CV ↗</a>
         </nav>
       )}

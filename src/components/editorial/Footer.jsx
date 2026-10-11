@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const CONTACTS = [
-  { label: 'WhatsApp', value: '+55 13 99168-9394', href: 'https://wa.me/5513991689394' },
+  { label: 'WhatsApp', value: '+55 11 97401-9394', href: 'https://wa.me/5511974019394' },
   { label: 'E-mail', value: 'gabrielsilvanovieira7@gmail.com', href: 'mailto:gabrielsilvanovieira7@gmail.com' },
   { label: 'LinkedIn', value: '/in/gabriel-silvano-vieira', href: 'https://linkedin.com/in/gabriel-silvano-vieira' },
   { label: 'GitHub', value: '@Gabrielsvdata', href: 'https://github.com/Gabrielsvdata' },
@@ -40,7 +40,7 @@ export default function Footer() {
       <div className="mt-16 pt-6 border-t border-paper/30 flex flex-col sm:flex-row justify-between gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/50">
         <span>© {new Date().getFullYear()} Gabriel Silvano</span>
         <a href="/curriculo_gabriel_silvano.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-paper">Baixar currículo ↗</a>
-        <span>Santos, SP — Brasil</span>
+        <span>São Paulo, SP — Brasil</span>
       </div>
     </footer>
   )

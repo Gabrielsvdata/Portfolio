@@ -62,7 +62,7 @@ export default function Experiencia() {
       </ol>
 
       <p className="mt-6 font-mono text-[11px] text-mute">
-        Formação: Análise e Desenvolvimento de Sistemas, FATEC (em andamento).
+        Formação: Tecnólogo em Análise e Desenvolvimento de Sistemas (concluído).
       </p>
     </section>
   )
