@@ -25,15 +25,6 @@ const JOBS = [
       'Automação de controles operacionais e suporte a sistemas internos.',
     ],
   },
-  {
-    company: 'Carrefour',
-    role: 'Logística & Operações',
-    period: 'antes de 2021',
-    stack: 'Processos · Indicadores',
-    bullets: [
-      'Operação e processos em varejo de grande porte, com foco em indicadores.',
-    ],
-  },
 ]
 
 export default function Experiencia() {
