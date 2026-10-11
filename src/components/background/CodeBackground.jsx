@@ -80,7 +80,7 @@ export default function CodeBackground() {
         className="absolute inset-0 opacity-5"
         style={{
           backgroundImage:
-            'linear-gradient(0deg, transparent 24%, rgba(34, 197, 94, 0.05) 25%, rgba(34, 197, 94, 0.05) 26%, transparent 27%, transparent 74%, rgba(34, 197, 94, 0.05) 75%, rgba(34, 197, 94, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(34, 197, 94, 0.05) 25%, rgba(34, 197, 94, 0.05) 26%, transparent 27%, transparent 74%, rgba(34, 197, 94, 0.05) 75%, rgba(34, 197, 94, 0.05) 76%, transparent 77%, transparent)',
+            'linear-gradient(0deg, transparent 24%, rgb(var(--accent-rgb) / 0.05) 25%, rgb(var(--accent-rgb) / 0.05) 26%, transparent 27%, transparent 74%, rgb(var(--accent-rgb) / 0.05) 75%, rgb(var(--accent-rgb) / 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgb(var(--accent-rgb) / 0.05) 25%, rgb(var(--accent-rgb) / 0.05) 26%, transparent 27%, transparent 74%, rgb(var(--accent-rgb) / 0.05) 75%, rgb(var(--accent-rgb) / 0.05) 76%, transparent 77%, transparent)',
           backgroundSize: '50px 50px',
         }}
       />
@@ -122,7 +122,7 @@ export default function CodeBackground() {
         style={{
           top: '5%',
           left: '-5%',
-          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgb(var(--accent-rgb) / 0.08) 0%, transparent 70%)',
           filter: 'blur(40px)',
         }}
         animate={{
@@ -142,7 +142,7 @@ export default function CodeBackground() {
         style={{
           bottom: '-10%',
           right: '-10%',
-          background: 'radial-gradient(circle, rgba(34, 197, 94, 0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgb(var(--accent-rgb) / 0.05) 0%, transparent 70%)',
           filter: 'blur(50px)',
         }}
         animate={{
@@ -161,7 +161,7 @@ export default function CodeBackground() {
         className="absolute inset-0 opacity-[0.01] pointer-events-none"
         style={{
           backgroundImage:
-            'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34, 197, 94, 0.3) 2px, rgba(34, 197, 94, 0.3) 4px)',
+            'repeating-linear-gradient(0deg, transparent, transparent 2px, rgb(var(--accent-rgb) / 0.3) 2px, rgb(var(--accent-rgb) / 0.3) 4px)',
           animation: 'scanlines 8s linear infinite',
         }}
       />

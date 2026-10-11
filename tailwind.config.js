@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-bg': '#0a0f0d',
-        'dark-secondary': '#0f1411',
-        'dark-tertiary': '#141a17',
-        'green-primary': '#22c55e',
-        'green-glow': '#4ade80',
-        'green-dark': '#16a34a',
-        'gray-light': '#e5e7eb',
-        'gray-medium': '#d1d5db',
-        'gray-dim': '#6b7280',
+        'dark-bg': 'rgb(var(--bg-dark-rgb) / <alpha-value>)',
+        'dark-secondary': 'rgb(var(--bg-secondary-rgb) / <alpha-value>)',
+        'dark-tertiary': 'rgb(var(--bg-tertiary-rgb) / <alpha-value>)',
+        'green-primary': 'rgb(var(--accent-rgb) / <alpha-value>)',
+        'green-glow': 'rgb(var(--glow-rgb) / <alpha-value>)',
+        'green-dark': 'rgb(var(--accent-dark-rgb) / <alpha-value>)',
+        'gray-light': 'rgb(var(--text-light-rgb) / <alpha-value>)',
+        'gray-medium': 'rgb(var(--text-medium-rgb) / <alpha-value>)',
+        'gray-dim': 'rgb(var(--text-dim-rgb) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -39,8 +39,8 @@ export default {
       },
       keyframes: {
         'glow-pulse': {
-          '0%, 100%': { textShadow: '0 0 10px rgba(34, 197, 94, 0.5)' },
-          '50%': { textShadow: '0 0 20px rgba(74, 222, 128, 0.8)' },
+          '0%, 100%': { textShadow: '0 0 10px rgb(var(--accent-rgb) / 0.5)' },
+          '50%': { textShadow: '0 0 20px rgb(var(--glow-rgb) / 0.8)' },
         },
         'float': {
           '0%, 100%': { transform: 'translateY(0px)' },
@@ -63,9 +63,9 @@ export default {
         'glass': 'blur(10px)',
       },
       boxShadow: {
-        'glow-green': '0 0 20px rgba(34, 197, 94, 0.3)',
-        'glow-green-strong': '0 0 40px rgba(74, 222, 128, 0.4)',
-        'inner-glow': 'inset 0 0 20px rgba(34, 197, 94, 0.1)',
+        'glow-green': '0 0 20px rgb(var(--accent-rgb) / 0.3)',
+        'glow-green-strong': '0 0 40px rgb(var(--glow-rgb) / 0.4)',
+        'inner-glow': 'inset 0 0 20px rgb(var(--accent-rgb) / 0.1)',
       },
     },
   },

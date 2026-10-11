@@ -21,7 +21,7 @@ export default function WhatsAppButton() {
       <div className="absolute inset-0 bg-green-primary/15 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       {/* Button */}
-      <div className="relative w-14 h-14 bg-green-primary/90 text-dark-bg rounded-full flex items-center justify-center shadow-lg group-hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all duration-300 border border-green-primary/40">
+      <div className="relative w-14 h-14 bg-green-primary/90 text-dark-bg rounded-full flex items-center justify-center shadow-lg group-hover:shadow-[0_0_20px_rgb(var(--accent-rgb)/0.3)] transition-all duration-300 border border-green-primary/40">
         {/* WhatsApp Icon */}
         <img
           src="/images/whatsapp.svg"

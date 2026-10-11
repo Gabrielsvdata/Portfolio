@@ -68,8 +68,8 @@ export default function HeroArt() {
       >
         <defs>
           <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#22c55e" stopOpacity="0.15" />
-            <stop offset="100%" stopColor="#22c55e" stopOpacity="0.6" />
+            <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.6" />
           </linearGradient>
           <filter id="glow">
             <feGaussianBlur stdDeviation="2.5" result="blur" />
@@ -87,7 +87,7 @@ export default function HeroArt() {
             <motion.circle
               r="4"
               cx={l.x}
-              fill="#4ade80"
+              fill="var(--glow)"
               filter="url(#glow)"
               animate={{ cy: [l.y1, l.y2, l.y1], opacity: [0, 1, 1, 1, 0] }}
               transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.8, ease: 'easeInOut' }}
@@ -109,8 +109,8 @@ export default function HeroArt() {
               width={NODE_W}
               height={NODE_H}
               rx="10"
-              fill="#0f1411"
-              stroke="#22c55e"
+              fill="var(--bg-secondary)"
+              stroke="var(--accent)"
               strokeOpacity="0.35"
             />
             <motion.rect
@@ -120,16 +120,16 @@ export default function HeroArt() {
               height={NODE_H}
               rx="10"
               fill="none"
-              stroke="#4ade80"
+              stroke="var(--glow)"
               strokeWidth="1.5"
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.8 }}
             />
-            <circle cx={n.x + 18} cy={n.y + NODE_H / 2} r="4" fill="#22c55e" />
-            <text x={n.x + 32} y={n.y + 24} fill="#e5e7eb" fontSize="13" fontWeight="600" fontFamily="Inter, sans-serif">
+            <circle cx={n.x + 18} cy={n.y + NODE_H / 2} r="4" fill="var(--accent)" />
+            <text x={n.x + 32} y={n.y + 24} fill="var(--text-light)" fontSize="13" fontWeight="600" fontFamily="Inter, sans-serif">
               {n.label}
             </text>
-            <text x={n.x + 32} y={n.y + 42} fill="#6b7280" fontSize="10" fontFamily="monospace">
+            <text x={n.x + 32} y={n.y + 42} fill="var(--text-dim)" fontSize="10" fontFamily="monospace">
               {n.sub}
             </text>
           </motion.g>
@@ -141,7 +141,7 @@ export default function HeroArt() {
             key={REQUESTS[i]}
             x={l.x + 12}
             y={(l.y1 + l.y2) / 2 + 3}
-            fill="#22c55e"
+            fill="var(--accent)"
             fontSize="9"
             fontFamily="monospace"
             animate={{ opacity: [0, 0.9, 0.9, 0] }}

@@ -153,7 +153,7 @@ export default function ProjectsSupabase() {
           className="mb-32 -mx-6"
         >
           <a href={featuredProject.link} target="_blank" rel="noopener noreferrer" className="group block">
-            <div className="relative overflow-hidden rounded-none md:rounded-2xl border-0 md:border border-green-primary/30 bg-gradient-to-br from-green-primary/8 to-transparent px-6 md:p-16 py-8 md:py-16 hover:border-green-primary/60 transition-all duration-500 hover:shadow-[0_0_60px_rgba(34,197,94,0.15)]">
+            <div className="relative overflow-hidden rounded-none md:rounded-2xl border-0 md:border border-green-primary/30 bg-gradient-to-br from-green-primary/8 to-transparent px-6 md:p-16 py-8 md:py-16 hover:border-green-primary/60 transition-all duration-500 hover:shadow-[0_0_60px_rgb(var(--accent-rgb)/0.15)]">
               {/* Badge */}
               <div className="absolute top-6 md:top-12 right-6 md:right-12 z-10">
                 <motion.span

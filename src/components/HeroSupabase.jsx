@@ -79,7 +79,7 @@ export default function HeroSupabase() {
         >
           <button
             onClick={() => document.getElementById('projetos').scrollIntoView({ behavior: 'smooth' })}
-            className="px-8 py-3 bg-green-primary text-dark-bg font-semibold rounded-lg hover:bg-green-primary hover:shadow-[0_0_30px_rgba(34,197,94,0.4)] transition-all duration-300"
+            className="px-8 py-3 bg-green-primary text-dark-bg font-semibold rounded-lg hover:bg-green-primary hover:shadow-[0_0_30px_rgb(var(--accent-rgb)/0.4)] transition-all duration-300"
           >
             Ver Projetos
           </button>
