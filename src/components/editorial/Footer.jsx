@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Logo from './Logo'
 
 const CONTACTS = [
   { label: 'WhatsApp', value: '+55 11 97401-9394', href: 'https://wa.me/5511974019394' },
@@ -38,7 +39,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-16 pt-6 border-t border-paper/30 flex flex-col sm:flex-row justify-between gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-paper/50">
-        <span>© {new Date().getFullYear()} Gabriel Silvano</span>
+        <span className="flex items-center gap-3"><Logo className="h-5 w-auto text-paper" /> © {new Date().getFullYear()} Gabriel Silvano</span>
         <a href="/curriculo_gabriel_silvano.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-paper">Baixar currículo ↗</a>
         <span>São Paulo, SP — Brasil</span>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Logo from './Logo'
 
 const LINKS = [
   { label: 'Trajetória', href: '#trajetoria' },
@@ -14,7 +15,7 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-40 bg-paper border-b border-ink">
       <div className="px-5 md:px-10 h-14 flex items-center justify-between text-[13px] uppercase tracking-[0.18em]">
-        <a href="#" className="font-semibold">Gabriel Silvano</a>
+        <a href="#" className="flex items-center gap-3 font-semibold" aria-label="Início"><Logo className="h-6 w-auto" /><span className="hidden sm:inline">Gabriel Silvano</span></a>
 
         <nav className="hidden md:flex gap-8">
           {LINKS.map((l) => (
