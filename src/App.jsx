@@ -11,9 +11,21 @@ import ExperienceSupabase from './components/ExperienceSupabase'
 import FooterSupabase from './components/FooterSupabase'
 import CodeBackground from './components/background/CodeBackground'
 import WhatsAppButton from './components/WhatsAppButton'
+import HeroEditorial from './components/concepts/HeroEditorial'
+import HeroBento from './components/concepts/HeroBento'
+import HeroTerminal from './components/concepts/HeroTerminal'
 import './App.scss'
 
+// Protótipos de conceito visual: abra com ?concept=editorial | bento | terminal
+const CONCEPTS = { editorial: HeroEditorial, bento: HeroBento, terminal: HeroTerminal }
+const concept = new URLSearchParams(window.location.search).get('concept')
+
 function App() {
+  if (CONCEPTS[concept]) {
+    const Concept = CONCEPTS[concept]
+    return <Concept />
+  }
+
   return (
     <div className="relative w-full min-h-screen bg-dark-bg text-gray-light overflow-x-hidden">
       <CodeBackground />
