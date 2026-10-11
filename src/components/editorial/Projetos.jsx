@@ -16,12 +16,12 @@ const PROJECTS = [
   },
   {
     n: '02',
-    title: 'Finvise',
-    kind: 'Finalista do hackathon Oracle',
-    year: '2025',
-    text: 'Plataforma financeira construída em equipe para o hackathon da Oracle, classificada para a fase final. Backend próprio, integração com IA e apresentação para banca técnica.',
-    tech: ['Python', 'Node.js', 'Oracle Cloud', 'IA'],
-    github: 'https://github.com/Gabrielsvdata',
+    title: 'FinVise',
+    kind: 'Plataforma de inteligência financeira — finalista do hackathon Oracle (No Country)',
+    year: '2026',
+    text: 'Importação de transações (CSV e Open Finance via Pluggy), classificação por Machine Learning, indicadores e agente financeiro com RAG. Em equipe, fui responsável por todo o frontend e pela identidade visual: React 19, TypeScript, Tailwind, TanStack Query, Recharts e PWA, consumindo backend Spring Boot e serviço de IA em FastAPI.',
+    tech: ['React 19', 'TypeScript', 'Tailwind', 'TanStack Query', 'Recharts', 'Spring Boot', 'FastAPI', 'PostgreSQL + pgvector'],
+    github: 'https://github.com/No-Country-simulation/G9-BR-Team-17-FinVise',
     image: '/images/finvise.png',
   },
   {
