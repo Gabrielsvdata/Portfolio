@@ -56,6 +56,16 @@ const PROJECTS = [
     github: 'https://github.com/Gabrielsvdata/doacao-solidaria-backend',
     image: '/images/doacao-solidaria-screenshot.png',
   },
+  {
+    n: '06',
+    title: 'O Olho Amarelo',
+    kind: "Fan game beat 'em up em pixel art, jogável no navegador",
+    year: '2026',
+    text: "Jogo de luta com rolagem lateral no estilo Golden Axe, inspirado em Supernatural: Dean ou Sam enfrentam os espíritos de Jericho até a Mulher de Branco. Tudo em um único arquivo, sem engine nem imagens: personagens animados por esqueleto e desenhados pixel a pixel no Canvas, combos, IA dos inimigos, chefe com padrões de ataque, trilha chiptune gerada com Web Audio e controles de teclado, toque e gamepad.",
+    tech: ['JavaScript', 'HTML5 Canvas', 'Web Audio API', 'Gamepad API', 'Pixel art procedural'],
+    link: '/jogos/olho-amarelo/',
+    image: '/images/olho-amarelo.png',
+  },
 ]
 
 export default function Projetos() {
