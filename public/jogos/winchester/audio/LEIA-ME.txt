@@ -1,8 +1,10 @@
 Música da tela inicial
 
-Coloque aqui um arquivo chamado abertura.mp3 para ele tocar na tela
-inicial, na abertura e na escolha do caçador, no lugar da trilha
-sintetizada. Sem esse arquivo, o jogo usa a trilha original.
+abertura.mp3 é a introdução da tela inicial: uma progressão de acordes
+em Mi menor (Em-D-C-D, Am-G-F-G, Em-G-D-C, final em Bm7) arranjada no
+estilo Mega Drive, com órgão, guitarras FM, baixo e bateria sintetizados.
+Não tem voz, letra nem trechos de gravações existentes.
 
-Use apenas áudio que você tenha autorização para publicar: tudo nesta
-pasta fica público junto com o site.
+Ela toca em loop na tela inicial, na abertura e na escolha do caçador.
+Se o arquivo for removido, o jogo volta para a trilha sintetizada em
+tempo real.
