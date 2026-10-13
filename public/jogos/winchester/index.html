@@ -396,8 +396,16 @@ function titleStep(st,at,sp){
     voice(N(n),d,.25,.04,at,len>1);voice(N(n-12),d,.5,.014,at+sp*.5,len>1);}}
 }
 let song=null,step=0,nextT=0,musicTimer=null;
-function playSong(name){song=SONGS[name];step=0;if(AC)nextT=AC.currentTime+.05;if(!musicTimer)musicTimer=setInterval(sched,25);}
-function stopSong(){song=null;}
+// Faixa de abertura em arquivo: se audio/abertura.mp3 existir ao lado do jogo, ela substitui a trilha sintetizada
+let titleTrack=null;
+try{fetch('audio/abertura.mp3',{method:'HEAD'}).then(r=>{if(r.ok&&/audio/.test(r.headers.get('content-type')||'')){titleTrack=new Audio('audio/abertura.mp3');titleTrack.loop=true;titleTrack.volume=.75;if(song===SONGS.title)playSong('title');}}).catch(()=>{});}catch(e){}
+const TITLE_MODES=['title','intro','select','controls'];
+function playTrack(){if(!titleTrack||muted)return;if(titleTrack.paused){titleTrack.play().catch(()=>{});}}
+function playSong(name){
+  if(titleTrack&&name==='title'){song=null;playTrack();return;}
+  if(titleTrack)titleTrack.pause();
+  song=SONGS[name];step=0;if(AC)nextT=AC.currentTime+.05;if(!musicTimer)musicTimer=setInterval(sched,25);}
+function stopSong(){song=null;if(titleTrack)titleTrack.pause();}
 function sched(){
   if(!AC||!song||muted||!musicOn)return;
   if(nextT<AC.currentTime)nextT=AC.currentTime+.02;
@@ -509,7 +517,7 @@ $('#app').addEventListener('pointerdown',e=>{
 });
 $('#capSkip').addEventListener('click',()=>{if(mode==='intro')endIntro();});
 $('#pauseBtn').addEventListener('click',()=>{mode==='play'?pause():mode==='pause'&&resume();});
-$('#sndBtn').addEventListener('click',()=>{audioOn();muted=!muted;$('#sndBtn').textContent=muted?'SOM OFF':'SOM ON';});
+$('#sndBtn').addEventListener('click',()=>{audioOn();muted=!muted;$('#sndBtn').textContent=muted?'SOM OFF':'SOM ON';if(titleTrack){if(muted)titleTrack.pause();else if(TITLE_MODES.includes(mode)){titleTrack.currentTime=0;playTrack();}}});
 
 /* ============ Combate ============ */
 function strike(a,targets,reach,dmg,kd,opt){
