@@ -56,6 +56,16 @@ const PROJECTS = [
     github: 'https://github.com/Gabrielsvdata/doacao-solidaria-backend',
     image: '/images/doacao-solidaria-screenshot.png',
   },
+  {
+    n: '06',
+    title: 'Winchester',
+    kind: "Fan game beat 'em up em pixel art inspirado em Supernatural, jogável no navegador",
+    year: '2026',
+    text: "Jogo de luta com rolagem lateral no estilo Golden Axe. Abre com uma cena animada contando a origem dos Winchester e segue com Dean ou Sam contra os espíritos de Jericho até a Mulher de Branco. Tudo em um único arquivo, sem engine nem imagens: personagens animados por esqueleto e desenhados pixel a pixel no Canvas, combos, IA dos inimigos, chefe com padrões de ataque, trilha chiptune gerada com Web Audio e controles de teclado, toque e gamepad.",
+    tech: ['JavaScript', 'HTML5 Canvas', 'Web Audio API', 'Gamepad API', 'Pixel art procedural'],
+    link: '/jogos/winchester/',
+    image: '/images/winchester.png',
+  },
 ]
 
 export default function Projetos() {
