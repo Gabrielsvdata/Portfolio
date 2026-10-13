@@ -83,16 +83,6 @@ npm run server
 ```
 Acessa em: http://localhost:3001
 
-## 🎮 Jogo: WINCHESTER
-
-O portfólio inclui um fan game em pixel art no estilo Golden Axe / Mega Drive, inspirado em Supernatural, publicado em **`/jogos/winchester/`**.
-
-- Tela inicial animada, abertura com 6 cenas e capítulo 1 completo (Jericho), com chefe.
-- Feito sem engine e sem imagens: Canvas, Web Audio API e Gamepad API em um único arquivo.
-- Funciona com teclado, toque e controle.
-
-Detalhes, controles e como foi feito: [`public/jogos/winchester/README.md`](public/jogos/winchester/README.md).
-
 ## 📁 Estrutura do Projeto
 
 ```
@@ -261,11 +251,10 @@ Breakpoints implementados:
 ## 🚀 Deploy
 
 ### Vercel (Recomendado para Frontend)
-1. Em [vercel.com](https://vercel.com), clique em **Add New → Project** e importe este repositório.
-2. A Vercel detecta o Vite sozinha: build `npm run build`, saída `dist/`.
-3. Clique em **Deploy**. Cada push na `main` publica uma nova versão.
-
-O jogo em `public/jogos/winchester/` é estático e sobe junto com o site.
+```bash
+npm run build
+# Deploy o arquivo dist/
+```
 
 ### Backend (Heroku / Railway)
 ```bash
