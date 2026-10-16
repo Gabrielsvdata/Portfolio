@@ -63,7 +63,7 @@ const PROJECTS = [
     year: '2026',
     text: "Jogo de luta com rolagem lateral no estilo Golden Axe, em 4 capítulos: espíritos, vampiros, demônios e o confronto com Azazel, decidido por um tiro do Colt. Cinco caçadores jogáveis (Dean, Sam, John, Bobby e Castiel), cada um com arma, tiro e magia próprios, apresentados na história conforme entram na equipe. Tudo em um único arquivo, sem engine nem imagens: personagens animados por esqueleto e desenhados pixel a pixel no Canvas, combos, IA dos inimigos, chefe com padrões de ataque, trilha chiptune gerada com Web Audio e controles de teclado, toque e gamepad.",
     tech: ['JavaScript', 'HTML5 Canvas', 'Web Audio API', 'Gamepad API', 'Pixel art procedural'],
-    link: 'https://gabrielsvdata.itch.io/thewinchester',
+    link: 'https://gabrielsvdata.itch.io/winchester',
     github: 'https://github.com/Gabrielsvdata/winchester',
     image: '/images/winchester.png',
   },
