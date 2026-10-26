@@ -12,7 +12,7 @@ const PROJECTS = [
     tech: ['React 19', 'TypeScript', 'Vite', 'Turborepo', 'Supabase', 'PostgreSQL'],
     link: 'https://club-sette-web.vercel.app/',
     image: '/images/club-sette.png',
-    portrait: true,
+    pos: '50% 10%',
   },
   {
     n: '02',
@@ -33,7 +33,7 @@ const PROJECTS = [
     tech: ['Python', 'Flask', 'PostgreSQL', 'Groq', 'OCR', 'Docker', 'Cloud Run'],
     link: 'https://sispar.gabrielsilvanovieira7.workers.dev/',
     github: 'https://github.com/Gabrielsvdata/Sispar-Backend',
-    image: '/images/sispar.png',
+    image: '/images/sispar-app.jpg',
   },
   {
     n: '04',
@@ -44,7 +44,7 @@ const PROJECTS = [
     tech: ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'Groq', 'React'],
     link: 'https://petmind-front.gabrielsilvanovieira7.workers.dev/',
     github: 'https://github.com/Gabrielsvdata/Petmind',
-    image: '/images/petmind.png',
+    image: '/images/petmind-app.jpg',
   },
   {
     n: '05',
@@ -56,6 +56,7 @@ const PROJECTS = [
     link: 'https://doacaosolidaria.vercel.app/',
     github: 'https://github.com/Gabrielsvdata/doacao-solidaria-backend',
     image: '/images/doacao-solidaria-screenshot.png',
+    pos: 'left center',
   },
   {
     n: '06',
@@ -98,7 +99,7 @@ export default function Projetos() {
                   {/* Tela do projeto: abre no hover (desktop) */}
                   <div className="hidden lg:block overflow-hidden max-h-0 group-hover:max-h-[300px] transition-[max-height] duration-500 ease-out">
                     <div className="mt-6 w-[400px] aspect-[16/10] border border-ink overflow-hidden">
-                      <img src={p.image} alt={p.title} className={`w-full h-full object-cover ${p.portrait ? 'object-top' : 'object-left-top'}`} style={{ filter: 'grayscale(1) contrast(1.05)' }} loading="lazy" />
+                      <img src={p.image} alt={p.title} className="w-full h-full object-cover" style={{ objectPosition: p.pos || 'center', filter: 'grayscale(1) contrast(1.05)' }} loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -116,7 +117,7 @@ export default function Projetos() {
 
                 {/* Imagem inline no mobile */}
                 <div className="md:col-span-12 lg:hidden border border-ink aspect-[16/9] overflow-hidden">
-                  <img src={p.image} alt={p.title} className={`w-full h-full object-cover ${p.portrait ? 'object-top' : 'object-left-top'}`} style={{ filter: 'grayscale(1)' }} loading="lazy" />
+                  <img src={p.image} alt={p.title} className="w-full h-full object-cover" style={{ objectPosition: p.pos || 'center', filter: 'grayscale(1)' }} loading="lazy" />
                 </div>
               </div>
             </motion.li>
