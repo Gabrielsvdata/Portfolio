@@ -69,6 +69,16 @@ const PROJECTS = [
     github: 'https://github.com/Gabrielsvdata/winchester',
     image: '/images/winchester.png',
   },
+  {
+    n: '07',
+    title: 'Skills de onboarding',
+    kind: 'Kit open source para Claude, Codex e Cursor entenderem sistemas legados',
+    year: '2026',
+    text: 'Cinco skills para quem entra numa empresa nova entender um sistema que não conhece: de onde vem cada dado, quem chama cada função, por que um bug acontece e o que quebra antes de mudar. Somente leitura, com evidência (arquivo, função e commit) e o que ficou sem verificar. O que um dev descobre vira contexto compartilhado para o próximo. Nasceu da skill que uso no trabalho para investigar o sistema da empresa.',
+    tech: ['Agent Skills', 'Claude Code', 'Codex', 'Cursor', 'Bash', 'ripgrep'],
+    github: 'https://github.com/Gabrielsvdata/dev-onboarding-skills',
+    image: '/images/skills-onboarding.png',
+  },
 ]
 
 export default function Projetos() {
