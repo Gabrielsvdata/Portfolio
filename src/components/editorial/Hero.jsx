@@ -67,7 +67,7 @@ export default function Hero() {
           className="md:col-span-5 relative md:-mt-[9vw] aspect-[3/4] overflow-hidden"
         >
           <img
-            src="/images/gabriel.jpg"
+            src="/images/gabriel-2026.jpg"
             alt="Gabriel Silvano"
             className="w-full h-full object-cover object-top"
             style={{ filter: 'grayscale(1) contrast(1.15) brightness(0.95)' }}
