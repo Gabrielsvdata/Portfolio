@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 // Balão de chat com o assistente (API em /chat do repositório assistente-whatsapp).
 // Sem VITE_ASSISTENTE_URL, ou com a API fora do ar, o balão mostra os contatos diretos.
-const API_URL = (import.meta.env.VITE_ASSISTENTE_URL || '').replace(/\/$/, '')
+const API_URL = (import.meta.env.VITE_ASSISTENTE_URL || 'https://assistente-731956238064.southamerica-east1.run.app').replace(/\/$/, '')
 const WHATSAPP = 'https://wa.me/5511974019394'
 const EMAIL = 'mailto:gabrielsilvanovieira7@gmail.com'
 
