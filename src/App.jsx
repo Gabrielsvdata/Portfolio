@@ -6,6 +6,7 @@ import Projetos from './components/editorial/Projetos'
 import Stack from './components/editorial/Stack'
 import Experiencia from './components/editorial/Experiencia'
 import Footer from './components/editorial/Footer'
+import ChatAssistente from './components/editorial/ChatAssistente'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Experiencia />
       </main>
       <Footer />
+      <ChatAssistente />
     </div>
   )
 }
